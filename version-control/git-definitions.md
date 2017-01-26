@@ -23,3 +23,6 @@ A good commit message is like a command "Add this ..." or "Fix this ...", as opp
 * What is a merge conflict?
 
 A merge conflict is the result of differing code in the same places. For instance, it's kind of like Suggesting in google docs for changes. A merge conflict is resolved by a teammate who looks at the differences to figure out what works and what should overwrite the other. 
+
+
+Oh hey there DBC!! 
