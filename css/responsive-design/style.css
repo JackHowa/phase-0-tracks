@@ -1,6 +1,6 @@
-/*body {
-  width: 960px;
-}*/
+body {
+  width: 960px; 
+}
 
 blockquote {
   border-left: 5px solid blue;
@@ -13,9 +13,22 @@ cite {
   margin-top: 10px;
 }
 
+section#external-links {
+  float: left;
+  max-width: 20%; 
+  min-width: 17%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+}
+
+main {
+  max-width: 80%;
+  float: right;
 }
 
 /* you're welcome to edit the
@@ -34,8 +47,25 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+/*basically separate
+conditional css to when you activate it */ 
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-monochrome: 600px) {
+  #external-links ul {
+  font-size:2em;
+}
+}
 
 
-/* helpful for sidebyside
-width: 20%;
-  float: left;*/
