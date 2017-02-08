@@ -1,3 +1,7 @@
+/*body {
+  width: 960px;
+}*/
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -30,3 +34,8 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
+/* helpful for sidebyside
+width: 20%;
+  float: left;*/
