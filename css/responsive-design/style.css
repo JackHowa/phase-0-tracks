@@ -17,6 +17,16 @@ cite {
   list-style-type: none;
   padding-left: 0px;
 }
+/* helpful for sidebyside
+width: 20%;
+  float: left;
+
+  vertical-align: top;
+
+  also helpful
+*/
+
+
 
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
@@ -36,6 +46,3 @@ figcaption {
 }
 
 
-/* helpful for sidebyside
-width: 20%;
-  float: left;*/
