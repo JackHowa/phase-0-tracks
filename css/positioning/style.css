@@ -1,17 +1,19 @@
 #octopus {
-	margin: 100px auto; /*margin and auto horizontally centers, 100px adds room on top*/
-	display: block;  /*block display element makes sure margin works and affected by center*/ 
+    margin: 100px auto;
+    /*margin and auto horizontally centers, 100px adds room on top*/
+    
+    display: block;
+    /*block display element makes sure margin works and affected by center*/
 }
-
-
 #hat {
-  position: absolute; /*non static positioning*/ 
-  top: 0px;
-  left: 600px;
+    position: absolute;
+    /*non static positioning*/
+    
+    top: 0px;
+    left: 600px;
 }
-
 #glasses {
-  position: absolute;
-  top: 200px;
-  left: 650px;
+    position: absolute;
+    top: 200px;
+    left: 650px;
 }
