@@ -12,7 +12,7 @@ fur = gets.chomp
 
 puts "Is the hamster a good candidate for adoption? True or false?"
 
-good_candidate = gets.to_bool 
+good_candidate = gets.chomp
 
 puts "What's its estimated age? If you don't know, press enter."
 
@@ -32,7 +32,8 @@ else
 	puts "The hamster is #{age} years old."
 end 
 
-if good_candidate == true 
+
+if good_candidate == "true"
 	puts "#{name} is a great candidate for adoption."
 else
 	puts "There may be better choices than #{name} for adoption."
