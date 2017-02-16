@@ -63,13 +63,17 @@ else
 	healthcare_yn = gets.chomp
 end 
 
-puts "#{name} is name"
-puts "#{age} is how old"
-puts "#{birth_year} is birth year"
-puts "#{like_garlic} to garlic"
-puts "#{healthcare} to healhcare"
 
+=begin 
+p "#{name} is name"
+p "#{age} is how old"
+p "#{birth_year} is birth year"
+p "#{like_garlic} to garlic"
+p "#{healthcare} to healhcare"
 
+alright this seemed to work as planned 
+
+=end 
 
 
 
