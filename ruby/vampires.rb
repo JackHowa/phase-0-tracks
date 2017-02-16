@@ -36,7 +36,6 @@ if ((age == Time.new.year - birth_year) || (age == Time.new.year - birth_year - 
 else
 	age_verify = false 
 end 
-p age_verify
 
 # question 3 garlic interest
 puts "Our cafe has garlic bread. Do you ... like garlic bread? (y/n)"
@@ -150,4 +149,5 @@ end
 # def vamp_check 
 
 =end 
+
 
