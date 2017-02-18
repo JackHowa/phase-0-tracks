@@ -17,6 +17,8 @@ puts "What is the caesar shift for the message? (1 for +1)"
 shift = gets.chomp
 
 # define the method encrypt if it's called 
+# had to add shift next to method because the 
+# variable was defined outside of the method 
 def encrypt(input,shift)
 
 	# determine the amount of times we need to index and 
@@ -101,7 +103,7 @@ def decrypt(input,shift)
 	input_length = input.length 
 
 	# define the variable that will be the integer intermediary between output
-	# and input that's incremented by the shift of 1
+	# and input that's incremented by the determined shift
 	input_number = 0
 
 	# set the variable for current index/count of the method 
@@ -140,7 +142,7 @@ def decrypt(input,shift)
 		input_number = alphabet.index(input_letter)
 
 		# transforming input number on alphabet to output number
-		# by subtracting 1 shift to input number character
+		# by subtracting determined caesar shift to input number character
 		output_number = input_number - shift
 
 		# use that output number to become a string again
@@ -175,6 +177,8 @@ decrypt(encrypt("swordfish",1))
 # This works because both methods are running before the 
 # call anyway. And the input doesn't neccessarily have to
 # be a gets chomp. We can just use the input in the method call.
+# Add a 1 because, with experimental caesar feature, it wouldn't work 
+# without the additon next to swordfish with the default 1 
 
 
 
