@@ -4,24 +4,18 @@
 # What is your name? Some known vampires are in the area, and we can check against the Werewolf Intelligence Bureau database for their aliases.
 # output name (string)
 
-# q2 
-# How old are you? What year were you born? This is to try to trick the vampire, who is likely several hundreds of years old. If an employee gives an age and a year of birth that don’t line up mathematically, that employee might be a vampire.
-# so testing whether 100+ && whether years line up?
-# output age (integer) 
-# output birth_year (integer)
-
-# q3
-# Our company cafeteria serves garlic bread. Should we order some for you? Vampires hate garlic. Do not even get a vampire started on garlic. Invite a vampire to an Italian restaurant even one time, and you’ll never hear the end of it.
-# output interest in garlic bread (boolean)
-
-# q4 
-# Would you like to enroll in the company’s health insurance? Vampires are immortal, so they certainly don’t need health insurance.
-# 
-
 # question 1 name 
 puts "What's your name?"
 name = gets.chomp
 
+# latest update 
+
+# q2 
+# How old are you? What year were you born? This is to try to trick the vampire, who is likely several hundreds of years old. 
+# If an employee gives an age and a year of birth that don’t line up mathematically, that employee might be a vampire.
+# so testing whether 100+ && whether years line up?
+# output age (integer) 
+# output birth_year (integer)
 
 # question 2 age test 
 puts "How old are you?"
@@ -30,6 +24,44 @@ age = gets.to_i
 puts "Oh and what year were you born?"
 birth_year = gets.to_i
 
+# q3
+# Our company cafeteria serves garlic bread. Should we order some for you? Vampires hate garlic. Do not even get a vampire started on garlic. 
+# Invite a vampire to an Italian restaurant even one time, and you’ll never hear the end of it.
+# output interest in garlic bread (boolean)
+# question 3 garlic interest
+puts "Our cafe has garlic bread. Do you ... like garlic bread? (y/n)"
+garlic_bread = gets.chomp
+
+# string to bool
+if garlic_bread == "y"
+	likes_garlic = true 
+elsif garlic_bread == "n"
+	likes_garlic = false 
+else 
+	puts "I'm sorry, were you nervous. Do ... you ... like garlic bread? (y/n)"
+	garlic_bread = gets.chomp
+end 
+
+# q4 
+# Would you like to enroll in the company’s health insurance? Vampires are immortal, so they certainly don’t need health insurance.
+# question 4 healthcare program 
+
+puts "Last, would you like to join our healthcare program? (y/n)"
+healthcare_yn = gets.chomp
+
+if healthcare_yn == "y"
+	wants_healthcare = true 
+elsif healthcare_yn == "n"
+	wants_healthcare = false 
+else 
+	puts "Sorry, still nervous? Would you like to join our healthcare program? (y/n)"
+	healthcare_yn = gets.chomp
+end 
+
+
+
+# release 2 
+
 # human age verifier
 if ((age == Time.new.year - birth_year) || (age == Time.new.year - birth_year - 1)) && age < 120
 	age_verify = true 	
@@ -37,40 +69,39 @@ else
 	age_verify = false 
 end 
 
-# question 3 garlic interest
-puts "Our cafe has garlic bread. Do you ... like garlic bread? (y/n)"
-garlic_bread = gets.chomp
 
-# string to bool
-if garlic_bread == "y"
-	like_garlic = true 
-elsif garlic_bread == "n"
-	like_garlic = true 
+# diagnosis 
+
+if name == ("Drake Cula" || "Tu Fang") 
+	puts "Definitely a vampire." 
+# checked 
+elsif !age_verify && !likes_garlic && !wants_healthcare
+	puts "Almost certainly a vampire."
+# checked
+elsif age_verify && (likes_garlic || wants_healthcare)
+	puts "Probably not a vampire."
+# checked 
+elsif !age_verify && !likes_garlic || !wants_healthcare
+	puts "Probably a vampire."
+# yep works now 
 else 
-	puts "I'm sorry, were you nervous. Do ... you ... like garlic bread? (y/n)"
-	garlic_bread = gets.chomp
-end 
+	puts "Results inconclusive."
+# checks out 
+end
+	
+	
 
-# question 4 healthcare program 
 
-puts "Last, would you like to join our healthcare program? (y/n)"
-healthcare_yn = gets.chomp
 
-if healthcare_yn == "y"
-	healthcare = true 
-elsif healthcare_yn == "n"
-	healthcare = false 
-else 
-	puts "Sorry, still nervous? Would you like to join our healthcare program? (y/n)"
-	healthcare_yn = gets.chomp
-end 
 
 
 =begin 
 
 release 2 
 
-Match the following conditions in the order they're listed. Your program should base its result on the latest condition matched, not the first condition matched. In other words, it's not a "only one condition will apply" sort of scenario. This may mean repeatedly updating a variable as each condition is checked, so that the variable always contains the most precise result.
+Match the following conditions in the order they're listed. Your program should base its result 
+# on the latest condition matched, not the first condition matched. In other words, it's not a "only one condition will apply" sort of scenario. 
+# This may mean repeatedly updating a variable as each condition is checked, so that the variable always contains the most precise result.
 ->-> this seems more confusing than it is. just do if then method after acquiring info 
 
 
@@ -143,7 +174,8 @@ end
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 # If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
 # If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-# Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
+# Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. 
+In that case, you should print “Definitely a vampire.”
 # Otherwise, print “Results inconclusive.”
 
 # def vamp_check 
