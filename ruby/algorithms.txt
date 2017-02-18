@@ -1,11 +1,34 @@
-1 For each person who walks into elevator:
-	- Until you hear a response for a "[number]", or they've already pressed a button, or last, until you ask three times,
-		- Ask "Which floor?" and show a smile at the person's face
-		- Wait 2 seconds for a response
-2 If no response was heard or they already pressed a button, 
-	- Repeat step 1 to next person who walked into elevator 
+How To Order A G & T At A Bar
+- Until outside bar counter,
+	- Search for shortest open path to free bar space where drinks are being poured
+	- Walk the path without bumping into people 
+- Stand at bar counter space until asked "What would you like?"
+	- Look for people behind bar
+	- Listen toward those people for "What would you like?"
+	- Identify those people as "bartenders"
+	- Face head toward bartender closest to you who's still behind bar
+- Say "A gin and tonic with lime. Your house gin please."
+- Wait until a glass is handed toward you 
+	- If more than 10 minutes elapse, repeat step 2
+- Hand your credit card to person who hands your drink and say "Run it once please"
+- Wait until they hand you your credit card back with two pieces of paper
+- Put credit card in wallet 
+- Identify greatest number on one of the pages 
+	- Write number 15% of that number below greatest number to the right of "tip" or "gratuity"
+	- Add a dollar sign before gratuity number and "----" after
+	- Write number 115% of that number below tip with a dollar sign $ first and a "---" after last number 
+- Check that your credit card is in your wallet 
+- Put piece of paper that you didn't write on in back pocket for future reflection 
+- Until at your table, 
+	- Search for shortest open path
+	- Walk the path without bumping into people
+	- Steady drink 
+- Enjoy G & T (if your programming allows)
 
-3 If you've done step 1 on everyone who walked into elevator, 
-	- Wait until more people walk into elevator 
+
+
+
+
+
 
 
