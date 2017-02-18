@@ -65,7 +65,9 @@ end
 decrypt(input)
 
 decrypt(encrypt("swordfish"))
-
+# This works because both methods are running before the 
+# call anyway. And the input doesn't neccessarily have to
+# be a gets chomp. We can just use the input in the method call.
 
 
 
