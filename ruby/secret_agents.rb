@@ -1,6 +1,10 @@
-puts "What would you like to encrypt?"
+puts "Would you like to encrypt or decrypt a password?"
 
-input = gets.chomp
+crypt_choice = gets.chomp 
+
+puts "What's the password?"
+
+input = gets.chomp 
 
 def encrypt(input)
 	input_length = input.length 
@@ -30,11 +34,9 @@ puts output
 
 end 
 
-encrypt(input)
-
-puts "What would you like to decrypt?"
-
-input = gets.chomp
+if crypt_choice == "encrypt"
+	encrypt(input)
+end 
 
 def decrypt(input)
 	input_length = input.length 
@@ -62,9 +64,17 @@ puts output
 
 end 
 
-decrypt(input)
+if crypt_choice == "decrypt"
+	decrypt(input)
+end 
 
-decrypt(encrypt("swordfish"))
+
+
+
+
+
+
+# decrypt(encrypt("swordfish"))
 # This works because both methods are running before the 
 # call anyway. And the input doesn't neccessarily have to
 # be a gets chomp. We can just use the input in the method call.
