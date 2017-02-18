@@ -26,7 +26,7 @@ def decrypt(input)
 
 	output = ""
 
-	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 
 	until input_length == current_index
 		input_letter = input[current_index]
