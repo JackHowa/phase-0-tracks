@@ -1,5 +1,3 @@
-# release 3
-
 puts "How many employees will be processed today? Please enter a number in numerical form."
 
 employee_count = gets.to_i
@@ -11,7 +9,7 @@ until employee_count == count
 
 	# question 1 name 
 	puts "What's your name?"
-	name = gets.chomp
+	employee_name = gets.chomp
 
 	# latest update 
 
@@ -60,9 +58,13 @@ until employee_count == count
 		healthcare_yn = gets.chomp
 	end 
 
+	allergy = ""
 
-
-	# release 2 
+	until allergy == "done" || allergy ==  "sunshine"
+		puts "Also, what allergies do you have? Please one then click enter."
+		puts "When you're down, or, if you don't have any, type: done."
+		allergy = gets.chomp 
+	end 
 
 	# human age verifier
 	if ((age == Time.new.year - birth_year) || (age == Time.new.year - birth_year - 1)) && age < 120
@@ -74,7 +76,9 @@ until employee_count == count
 
 	# diagnosis 
 
-	if name == ("Drake Cula" || "Tu Fang") 
+	if allergy == "sunshine"
+		puts "Probably a vampire."
+	elsif employee_name == "Drake Cula" || employee_name == "Tu Fang" 
 		puts "Definitely a vampire." 
 	# checked 
 	elsif !age_verify && !likes_garlic && !wants_healthcare
@@ -90,8 +94,6 @@ until employee_count == count
 		puts "Results inconclusive."
 	# checks out 
 	end
-
-	# release 3 
 
 	count += 1 
 
