@@ -1,14 +1,18 @@
 puts "Would you like to encrypt or decrypt a message?"
 
-choice = gets.chomp 
+crypt_choice = gets.chomp 
 
 puts "What should I input into the encrypter/decrypter machine?"
 
 input = gets.chomp 
 
-puts "What caesar shift was applied to the message? (1 for +1)"
+puts "What is the caesar shift for the message? (1 for +1)"
 
 shift = gets.to_i
+
+if crypt_choice == "decrypt"
+	shift = -(shift)
+end 
 
 
 def decrypt(input)
