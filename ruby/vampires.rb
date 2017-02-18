@@ -36,7 +36,7 @@ garlic_bread = gets.chomp
 if garlic_bread == "y"
 	likes_garlic = true 
 elsif garlic_bread == "n"
-	likes_garlic = true 
+	likes_garlic = false 
 else 
 	puts "I'm sorry, were you nervous. Do ... you ... like garlic bread? (y/n)"
 	garlic_bread = gets.chomp
@@ -73,15 +73,20 @@ end
 # diagnosis 
 
 if name == ("Drake Cula" || "Tu Fang") 
-	puts “Definitely a vampire.”
+	puts "Definitely a vampire." 
+# checked 
+elsif !age_verify && !likes_garlic && !wants_healthcare
+	puts "Almost certainly a vampire."
+# checked
 elsif age_verify && (likes_garlic || wants_healthcare)
 	puts "Probably not a vampire."
-elsif !(age_verify && likes_garlic && wants_healthcare)
-	puts "Almost certainly a vampire."
-elsif !age_verify && !(likes_garlic || wants_healthcare)
+# checked 
+elsif !age_verify && !likes_garlic || !wants_healthcare
 	puts "Probably a vampire."
+# yep works now 
 else 
-	puts “Results inconclusive.”
+	puts "Results inconclusive."
+# checks out 
 end
 	
 	
