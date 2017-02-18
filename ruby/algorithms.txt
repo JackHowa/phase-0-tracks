@@ -1,0 +1,11 @@
+1 For each person who walks into elevator:
+	- Until you hear a response for a "[number]", or they've already pressed a button, or last, until you ask three times,
+		- Ask "Which floor?" and show a smile at the person's face
+		- Wait 2 seconds for a response
+2 If no response was heard or they already pressed a button, 
+	- Repeat step 1 to next person who walked into elevator 
+
+3 If you've done step 1 on everyone who walked into elevator, 
+	- Wait until more people walk into elevator 
+
+
