@@ -6,7 +6,7 @@
 =end 
 
 puts "What's your name"
-user_name = gets.chomp 
+user_name = gets.to_sym!
 
 puts "How old are you?"
 age = gets.to_i
@@ -38,3 +38,22 @@ user_info = {
 
 # print key symbols and corresponding data 
 puts user_info
+
+
+# update a key 
+puts "Would you like to change your info, like for decor theme, or none?"
+update_key = gets.chomp 
+
+if update_key == "decor theme"
+	puts "What decor theme do you like?"
+	decor_theme = gets.to_sym
+elsif update_key == "none"
+	puts "Sounds good, let's move on."
+else 
+	puts "Decor theme or none?"
+end 
+
+user_info[:decor_theme] = decor_theme
+
+puts user_info
+
