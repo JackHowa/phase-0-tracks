@@ -6,7 +6,7 @@
 =end 
 
 puts "What's your name"
-user_name = gets.to_sym!
+user_name = gets.chomp
 
 puts "How old are you?"
 age = gets.to_i
@@ -46,7 +46,7 @@ update_key = gets.chomp
 
 if update_key == "decor theme"
 	puts "What decor theme do you like?"
-	decor_theme = gets.to_sym
+	decor_theme = gets.chomp
 elsif update_key == "none"
 	puts "Sounds good, let's move on."
 else 
