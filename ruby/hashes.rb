@@ -1,59 +1,52 @@
-=begin - prompt user to enter data on interior application, including
-		the client's name, age, number of children, decor theme, 
-		and so on (you can choose your own as long as it's a good mix of string, integer, and boolean data).
-
-
-=end 
-
-puts "What's your name"
-user_name = gets.chomp
-
-puts "How old are you?"
-age = gets.to_i
-
-puts "How many children do you have?"
-children = gets.to_i
-
-puts "What decor theme do you like?"
-decor_theme = gets.chomp 
-
-puts "Have you ever done interior design? (y/n)"
-experience = gets.chomp 
-
-#convert the string to a boolean
-if experience == "y"
-	experience = true 
-else experience == "n"
-	experience = false
-end
-
-#convert the key strings to symbols 
+# show the whole hash value
 user_info = {
-	user_name: user_name, 
-	age: age, 
-	children: children,
-	decor_theme: decor_theme,
-	experience: experience
+	name: "", 
+	age: nil, 
+	children: "",
+	decor_theme: "",
+	experience: nil
 }
 
-# print key symbols and corresponding data 
-puts user_info
+# asking the user for info 
 
+puts "What's your name?"
 
-# update a key 
-puts "Would you like to change your info, like for decor theme, or none?"
-update_key = gets.chomp 
+user_info[:name] = gets.chomp
 
-if update_key == "decor theme"
-	puts "What decor theme do you like?"
-	decor_theme = gets.chomp
-elsif update_key == "none"
-	puts "Sounds good, let's move on."
+puts "How old are you?"
+
+user_info[:age] = gets.to_i
+
+puts "How many children do you have?"
+
+user_info[:children] = gets.to_i
+
+puts "What decor theme do you like?"
+
+user_info[:decor_theme] = gets.chomp
+
+puts "Have you ever done interior design? (y/n)"
+
+user_info[:experience] = gets.chomp
+
+#convert the string to a boolean
+if user_info[:experience] == "y"
+	user_info[:experience] = true 
+else user_info[:experience] == "n"
+	user_info[:experience] = false
+end
+
+puts "Did ya' miss anything?"
+puts "Enter the key you'd like to update (or 'none' to exit)."
+
+user_info[:re_enter] = gets.chomp
+
+if user_info[:re_enter] == "none"
 else 
-	puts "Decor theme or none?"
+	puts "So what did you want to change that key's value to?"
+	user_info[:re_enter] = user_info[:re_enter].to_sym
+	user_info[user_info[:re_enter]] = gets.chomp
 end 
 
-user_info[:decor_theme] = decor_theme
-
+#test updated value 
 puts user_info
-
