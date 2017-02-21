@@ -36,19 +36,17 @@ else user_info[:experience] == "n"
 	user_info[:experience] = false
 end
 
-# Give the user the opportunity to update a key (no need to loop, once is fine). 
-user_info[:re_enter] = ""
-until user_info[:re_enter] == "none"
-	puts "Did ya' miss anything?"
-	puts "Enter the key you'd like to update (or 'none' to exit)."
-	user_info[:re_enter] = gets.to_sym
-	
-# After all, sometimes users make mistakes! If the designer says "none", skip it. 
-# But if the designer enters "decor_theme" (for example), 
-# your program should ask for a new value and update the :decor_theme key. 
-# (Hint: Strings have methods that will turn them into symbols, which would be quite handy here.) 
-# You can assume the user will correctly input a key that exists in your hash -- no need to handle user errors.
+puts "Did ya' miss anything?"
+puts "Enter the key you'd like to update (or 'none' to exit)."
 
-# test update the hash bool
-p user_info
+user_info[:re_enter] = gets.chomp
 
+if user_info[:re_enter] == "none"
+else 
+	puts "So what did you want to change that key's value to?"
+	user_info[:re_enter] = user_info[:re_enter].to_sym
+	user_info[user_info[:re_enter]] = gets.chomp
+end 
+
+#test updated value 
+puts user_info
