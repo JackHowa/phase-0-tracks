@@ -1,6 +1,43 @@
+favorite_actors = {
+    robin_williams: {
+        pretty_name: "Robin Williams",
+        favorite_movies: [
+            "Dead Poets Society",
+            "Goodwill Hunting",
+            "Fisher King",
+            "Good Morning Vietnam"
+        ]
+    },
+    matt_damon: {
+        pretty_name: "Matt Damon",
+        favorite_movies: [
+            "Bourne Series": [
+                "Bourne Ultimatum",
+                "Bourne",
+                "Bourne Identity",
+                "Bourne Supremacy"
+            ],
+            "Goodwill Hunting",
+            "The Departed"
+            "Interstellar"
+            "The Adjustment Bureau"
+        ]
+    },
+    mike_myers: {
+        pretty_name: "Mike Myers"
+        favorite_movies: [
+            "Austin Powers Series": [
+                "Austin Powers: International Man of Mystery",
+                "Austin Powers: The Spy Who Shagged Me",
+                "Austin Powers in Goldmember"
+            ]
+            "Wayne's World",
+            "Shrek"
+        ]
+    }
+}
 
-
-
+p favorite_actors
 
 
 
