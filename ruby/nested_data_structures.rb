@@ -1,4 +1,15 @@
-house = {
+
+
+
+
+
+
+
+
+
+=begin 
+
+#house = {
 	'Living Room' => [ 
 		'sofa',
 		'chandelier'],
@@ -110,4 +121,5 @@ p airplane[:first_class][:pretty_name]
 
 # Add a line of code that does that here.
 
+=end 
 
