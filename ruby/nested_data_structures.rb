@@ -1,43 +1,45 @@
 favorite_actors = {
     robin_williams: {
         pretty_name: "Robin Williams",
-        favorite_movies: [
-            "Dead Poets Society",
-            "Goodwill Hunting",
-            "Fisher King",
-            "Good Morning Vietnam"
-        ]
-    },
+        favorite_movie_scores: {
+            "Dead Poets Society": 85,
+            "Good Will Hunting": 97,
+            "Fisher King": 82,
+            "Good Morning Vietnam": 89
+        	}
+    	},
     matt_damon: {
         pretty_name: "Matt Damon",
-        favorite_movies: [
-            "Bourne Series": [
-                "Bourne Ultimatum",
-                "Bourne",
-                "Bourne Identity",
-                "Bourne Supremacy"
-            ],
-            "Goodwill Hunting",
-            "The Departed"
-            "Interstellar"
-            "The Adjustment Bureau"
-        ]
-    },
+        favorite_movie_scores: {
+            "Goodwill Hunting": 85,
+            "The Departed": 91,
+            "Interstellar": 71,
+            "The Adjustment Bureau": 72,
+            "Bourne Series": {
+                "Bourne Ultimatum": 93 ,
+                "Bourne": 56,
+                "Bourne Identity": 83,
+                "Bourne Supremacy": 81
+                }
+            }
+    	},
     mike_myers: {
-        pretty_name: "Mike Myers"
-        favorite_movies: [
-            "Austin Powers Series": [
-                "Austin Powers: International Man of Mystery",
-                "Austin Powers: The Spy Who Shagged Me",
-                "Austin Powers in Goldmember"
-            ]
-            "Wayne's World",
-            "Shrek"
-        ]
-    }
+        pretty_name: "Mike Myers",
+        favorite_movie_scores: {
+            "Austin Powers Series": {
+                "Austin Powers: International Man of Mystery": 70,
+                "Austin Powers: The Spy Who Shagged Me": 51,
+                "Austin Powers in Goldmember": 54
+            },
+            "Wayne's World Series": {
+            	"Wayne's World": 86,
+            	"Wayne's World 2": 60
+        	}
+    	}
+	}
 }
 
-p favorite_actors
+puts favorite_actors
 
 
 
@@ -45,6 +47,7 @@ p favorite_actors
 
 
 =begin 
+
 
 #house = {
 	'Living Room' => [ 
