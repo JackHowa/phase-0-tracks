@@ -1,36 +1,66 @@
-#  declare an array 
+# release1
 
-grades = ["a", "b", "c", "d"]
 
-# new_grades = []
+# array array array
 
-# p grades
+# declare an array 
+work_week = ["Monday","Tuesday","Wednesday","Thursday","Friday"]
 
-# # each one using .each
+work_week_short = []
 
-# grades.each { |student| 
-# 	new_grades << grades.reverse
-# }
+# print the array 
+p work_week
 
-# p new_grades
+# iterate through array with each
+# chop shortens each day by one char
+work_week.each do |day|
+	work_week_short << day.chop
+end 
 
-# map 
+# indicate the difference between new array and old 
+puts "after iteration"
 
-puts grades 
-grades.map { |student|
-	grades.shuffle!
-}
+# print new array 
+p work_week_short
 
-puts grades
 
-# # declare a hash
+# use map! to iterate through array 
+work_week.map! do |day|
+	day.upcase
+end 
 
-# food_ranking = {
-# 	"pizza" => 5,
-# 	"pb&j" => 8,
-# 	"salmon" => 3
-# }
+# indicate change after map 
+puts "What the work week looks like from the weekend perspective:"
+p work_week
 
-# each 
 
-# map 
+# release1
+
+
+# hash smash
+
+# declare hash
+hs_grades = {"chemistry" => "c", "stats" => "b", "history" => "a"} 
+
+# declare new empty hash 
+college_grades = {}
+
+# iterate through hash with each 
+hs_grades.each do |course,grade|
+	college_grades[course] = grade.next
+end 
+# inspo via https://stackoverflow.com/questions/812541/how-to-change-hash-values#812551
+
+#print hash after each 
+puts "What grades look like in high school:"
+p hs_grades
+
+puts "What grades look like in college:"
+p college_grades
+
+
+
+# release 2 
+
+
+
