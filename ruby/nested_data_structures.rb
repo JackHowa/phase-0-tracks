@@ -1,4 +1,55 @@
-house = {
+favorite_actors = {
+    robin_williams: {
+        pretty_name: "Robin Williams",
+        favorite_movie_scores: {
+            "Dead Poets Society": 85,
+            "Good Will Hunting": 97,
+            "Fisher King": 82,
+            "Good Morning Vietnam": 89
+        	}
+    	},
+    matt_damon: {
+        pretty_name: "Matt Damon",
+        favorite_movie_scores: {
+            "Goodwill Hunting": 85,
+            "The Departed": 91,
+            "Interstellar": 71,
+            "The Adjustment Bureau": 72,
+            "Bourne Series": {
+                "Bourne Ultimatum": 93 ,
+                "Bourne": 56,
+                "Bourne Identity": 83,
+                "Bourne Supremacy": 81
+                }
+            }
+    	},
+    mike_myers: {
+        pretty_name: "Mike Myers",
+        favorite_movie_scores: {
+            "Austin Powers Series": {
+                "Austin Powers: International Man of Mystery": 70,
+                "Austin Powers: The Spy Who Shagged Me": 51,
+                "Austin Powers in Goldmember": 54
+            },
+            "Wayne's World Series": {
+            	"Wayne's World": 86,
+            	"Wayne's World 2": 60
+        	}
+    	}
+	}
+}
+
+puts favorite_actors
+
+
+
+
+
+
+=begin 
+
+
+#house = {
 	'Living Room' => [ 
 		'sofa',
 		'chandelier'],
@@ -110,4 +161,5 @@ p airplane[:first_class][:pretty_name]
 
 # Add a line of code that does that here.
 
+=end 
 
