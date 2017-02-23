@@ -106,11 +106,35 @@ p fav_nums
 p fav_nums.first(1)
 
 
+
+
 # hash bash 
 
 # declare hash 
-
 fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.delete_if { |rank,digit| rank > 2 }
+puts "Only my top 2"
+p fav_letters
+
+# declare hash 
+fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.keep_if { |rank,digit| rank > 2 }
+puts "Not my top 2"
+p fav_letters
+
+# declare hash 
+fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.select! { |rank,digit| rank.even?}
+p fav_letters
+
+
+
 
 
 
