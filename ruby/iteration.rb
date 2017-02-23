@@ -60,7 +60,91 @@ p college_grades
 
 
 
-# release 2 
+# release 2
+
+
+# array array arrray
+
+# declare array
+fav_nums = [3, 5, 7, 14, 21] 
+
+puts "Here's some of my favorite numbers:"
+p fav_nums
+
+puts "Delete any numbers less than 5"
+fav_nums.delete_if { |num| num < 5 }
+
+p fav_nums
+# via http://ruby-doc.org/core-2.4.0/Array.html#method-i-delete_if 
+
+# redeclare array 
+fav_nums = [3, 5, 7, 14, 21] 
+puts "Here's some of my favorite numbers:"
+
+p fav_nums
+puts "Keep numbers less than 5"
+fav_nums.keep_if { |num| num < 5}
+
+p fav_nums
+
+# redeclare array 
+puts "Here's some of my favorite numbers:"
+fav_nums = [3, 5, 7, 14, 21] 
+p fav_nums
+
+puts "Select only even numbers."
+fav_nums.select! { |num| num.even? } 
+p fav_nums
+
+
+# redeclare array 
+puts "Here's some of my favorite numbers:"
+fav_nums = [3, 5, 7, 14, 21] 
+p fav_nums
+
+# make false 
+p fav_nums.first(1)
+
+
+
+
+# hash bash 
+
+# declare hash 
+fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.delete_if { |rank,digit| rank > 2 }
+puts "Only my top 2"
+p fav_letters
+
+# declare hash 
+fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.keep_if { |rank,digit| rank > 2 }
+puts "Not my top 2"
+p fav_letters
+
+# declare hash 
+fav_letters = {1 => "j", 2 => "y", 3 => "s"}
+
+p fav_letters
+fav_letters.select! { |rank,digit| rank.even?}
+p fav_letters
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
