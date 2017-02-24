@@ -11,6 +11,10 @@ def calculate(input)
 
 	done = false
 
+	count = 0
+
+	calc_hash = {}
+
 	until done == true 
 
 		puts "What calculation would you like me to make?"
@@ -21,9 +25,13 @@ def calculate(input)
 
 		if input == "done"
 			done = true 
-			return
+			puts "#{count} operation(s) were performed:"
+
+			calc_hash.each { |expression,output|
+				puts "#{expression} = #{output}"
+			}
 		else 
-			input = calc_input
+			calc_input = input 
 		end 
 
 		calc_elements = calc_input.split
@@ -44,8 +52,15 @@ def calculate(input)
 		# make the equation 
 		output = num1.send(operator_string,num2)
 
+		calc_hash.merge! calc_input => output
+
 		# print output 
-		puts output
+		if done == false 
+			puts output
+		end 
+
+		count += 1 
+
 	end 
 end 
 
