@@ -33,7 +33,7 @@ full_name = ""
 def alias_maker(full_name)
 
 	# declare empty print database variable 
-	quit = ""
+	quit = false
 
 	# declare empty name hash for iterating through with merge 
 	# will print if quit is true 
@@ -45,8 +45,8 @@ def alias_maker(full_name)
 
 		# user interface with instructions for quit as well
 		# current system setup for one first and one last name 
-		puts "Enter a first and a last name to get your alias:"
-		puts "(type quit to exit)"
+		puts "Enter a first and a last name to get an alias:"
+		puts "(type quit to exit and print that alias)"
 
 		# starting off with alias input so quit doesn't become full_name key
 		alias_input = gets.chomp 
@@ -58,7 +58,10 @@ def alias_maker(full_name)
 
 			# test code 
 			# prints the final hash 
-			puts name_hash
+
+			name_hash.each { |full_name,alias_name|
+				puts "#{full_name} is an operative also known as #{alias_name}."
+			}
 		else 
 			# alias input becomes full_name 
 			full_name = alias_input
@@ -146,7 +149,15 @@ def alias_maker(full_name)
 
 		# prints new alias_name output so each user gets their full name conversion 
 		# fulfills release 1 request for individual user 
-		puts alias_name
+
+		# add quit == flase, so that in release 2, it doesn't print last person's alias to quit user 
+		# method would basically keep running and output last alias as well 
+		# individual users still need their alias, database manager doesn't need an alias ;) 
+		# need an if not a while or until so last alias name doesn't keep running 
+
+		if quit == false 
+			puts alias_name
+		end 
 
 		# store alias and iterate through hash for new names
 		# fulfills release 2 request for admin who gets all the hash keys and values 
