@@ -1,43 +1,55 @@
 
-num1 = nil
+# num1 = nil
 
-num2 = nil
+# num2 = nil
 
-operator_string = ""
+# operator_string = ""
 
-calc_input = ""
+input = ""
 
-def calculate(num1,operator_string,num2)
+def calculate(input)
 
-	puts "What calculation would you like me to make?"
-	puts ("for instance, 4 + 5")
+	done = false
 
-	calc_input = gets.chomp 
+	until done == true 
 
-	calc_elements = calc_input.split
+		puts "What calculation would you like me to make?"
+		puts "[for instance, 4 + 5 ]"
+		puts "Or, type 'done' to finish."
 
-	# num 1 conversion 
-	num1 = calc_elements[0]
+		input = gets.chomp 
 
-	num1 = num1.to_i
+		if input == "done"
+			done = true 
+			return
+		else 
+			input = calc_input
+		end 
 
-	# op conversion 
-	operator_string = calc_elements[1]
+		calc_elements = calc_input.split
 
-	# num 2 conversion 
-	num2 = calc_elements[2]
+		# num 1 conversion 
+		num1 = calc_elements[0]
 
-	num2 = num2.to_i
+		num1 = num1.to_i
 
-	# make the equation 
-	output = num1.send(operator_string,num2)
+		# op conversion 
+		operator_string = calc_elements[1]
 
-	# print output 
-	puts output
+		# num 2 conversion 
+		num2 = calc_elements[2]
 
+		num2 = num2.to_i
+
+		# make the equation 
+		output = num1.send(operator_string,num2)
+
+		# print output 
+		puts output
+	end 
 end 
 
-calculate(num1,operator_string,num2)
+calculate(input)
 
 
 
