@@ -1,3 +1,16 @@
+
+full_name = ""
+
+
+puts "Enter a first and a last name to get your alias:"
+puts "(type quit to exit)"
+
+full_name = gets.chomp 
+
+if full_name == "quit"
+	return 
+else 
+	
 # pseudo 
 
 # Swapping the first and last name
@@ -20,8 +33,6 @@
 # - use keys to match with reversed name in consonants
 # 	- substitute over time that key with its value 
 # 	- output the vowel and consonant substitution 
-
-full_name = "Felicia Torres"
 
 def alias_maker(full_name)
 	first_last = full_name.split
@@ -93,7 +104,4 @@ def alias_maker(full_name)
 	puts vowel_next_name.gsub(regex_consonant, consonant_crosswalk)
 
 end 
-
-alias_maker(full_name)
-
 
