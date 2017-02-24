@@ -1,15 +1,4 @@
 
-full_name = ""
-
-
-puts "Enter a first and a last name to get your alias:"
-puts "(type quit to exit)"
-
-full_name = gets.chomp 
-
-if full_name == "quit"
-	return 
-else 
 	
 # pseudo 
 
@@ -34,74 +23,95 @@ else
 # 	- substitute over time that key with its value 
 # 	- output the vowel and consonant substitution 
 
-def alias_maker(full_name)
-	first_last = full_name.split
-	last_first = first_last[1] + " " + first_last[0] 
+full_name = ""
 
-	vowel_crosswalk = {
-		"a"=>"e",
-		"A"=>"E",
-		"e"=>"i",
-		"E"=>"I",
-		"i"=>"o",
-		"I"=>"O",
-		"o"=>"u",
-		"O"=>"U",
-		"u"=>"a",
-		"U"=>"A"
+def alias_maker(full_name)
+
+	quit = ""
+
+	until quit == true
+
+		puts "Enter a first and a last name to get your alias:"
+		puts "(type quit to exit)"
+
+		input = gets.chomp 
+
+		if input == "quit"
+			quit = true 
+			return
+		else 
+			full_name = input
+		end 
+
+		first_last = full_name.split
+		last_first = first_last[1] + " " + first_last[0] 
+
+		vowel_crosswalk = {
+			"a"=>"e",
+			"A"=>"E",
+			"e"=>"i",
+			"E"=>"I",
+			"i"=>"o",
+			"I"=>"O",
+			"o"=>"u",
+			"O"=>"U",
+			"u"=>"a",
+			"U"=>"A"
+		}
+
+	  	consonant_crosswalk = {
+			"a" =>"b",
+			"b" =>"c",
+			"c" =>"d",
+			"d" =>"f",
+			"f" =>"g",
+			"g" =>"h",
+			"h" =>"j",
+			"j" =>"k",
+			"k" =>"l",
+			"l" =>"m",
+			"m" =>"n",
+			"n" =>"p",
+			"p" =>"q",
+			"q" =>"r",
+			"r" =>"s",
+			"s" =>"t",
+			"t" =>"v",
+			"v" =>"w",
+			"w" =>"x",
+			"x" =>"y",
+			"z" =>"a",
+			"A" =>"B",
+			"B" =>"C",
+			"C" =>"D",
+			"D" =>"F",
+			"F" =>"G",
+			"G" =>"H",
+			"H" =>"J",
+			"J" =>"K",
+			"K" =>"L",
+			"L" =>"M",
+			"M" =>"N",
+			"N" =>"P",
+			"P" =>"Q",
+			"Q" =>"R",
+			"R" =>"S",
+			"S" =>"T",
+			"T" =>"V",
+			"V" =>"W",
+			"W" =>"X",
+			"X" =>"Y",
+			"Y" =>"Z",
+			"Z" =>"A"
 	}
 
-  	consonant_crosswalk = {
-		"a" =>"b",
-		"b" =>"c",
-		"c" =>"d",
-		"d" =>"f",
-		"f" =>"g",
-		"g" =>"h",
-		"h" =>"j",
-		"j" =>"k",
-		"k" =>"l",
-		"l" =>"m",
-		"m" =>"n",
-		"n" =>"p",
-		"p" =>"q",
-		"q" =>"r",
-		"r" =>"s",
-		"s" =>"t",
-		"t" =>"v",
-		"v" =>"w",
-		"w" =>"x",
-		"x" =>"y",
-		"z" =>"a",
-		"A" =>"B",
-		"B" =>"C",
-		"C" =>"D",
-		"D" =>"F",
-		"F" =>"G",
-		"G" =>"H",
-		"H" =>"J",
-		"J" =>"K",
-		"K" =>"L",
-		"L" =>"M",
-		"M" =>"N",
-		"N" =>"P",
-		"P" =>"Q",
-		"Q" =>"R",
-		"R" =>"S",
-		"S" =>"T",
-		"T" =>"V",
-		"V" =>"W",
-		"W" =>"X",
-		"X" =>"Y",
-		"Y" =>"Z",
-		"Z" =>"A"
-}
+	  	regex_vowel = /[#{vowel_crosswalk.keys.join}]/
+		vowel_next_name = last_first.gsub(regex_vowel, vowel_crosswalk)
 
-  	regex_vowel = /[#{vowel_crosswalk.keys.join}]/
-	vowel_next_name = last_first.gsub(regex_vowel, vowel_crosswalk)
-
-	regex_consonant = /[#{consonant_crosswalk.keys.join}]/
-	puts vowel_next_name.gsub(regex_consonant, consonant_crosswalk)
-
+		regex_consonant = /[#{consonant_crosswalk.keys.join}]/
+		puts vowel_next_name.gsub(regex_consonant, consonant_crosswalk)
+	end	
 end 
+
+alias_maker(full_name)
 
