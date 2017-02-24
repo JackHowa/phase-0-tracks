@@ -139,10 +139,10 @@ def alias_maker(full_name)
 		# use the hash keys to find using gsub their rotated value 
 		# join brings it together so gsub can iterate through and replace pattern
 	  	vowel_find = /[#{vowel_crosswalk.keys.join}]/
-		vowel_next_name = last_first.gsub(regex_vowel, vowel_crosswalk)
+		vowel_next_name = last_first.gsub(vowel_find, vowel_crosswalk)
 
 		consonant_find = /[#{consonant_crosswalk.keys.join}]/
-		alias_name = vowel_next_name.gsub(regex_consonant, consonant_crosswalk)
+		alias_name = vowel_next_name.gsub(consonant_find, consonant_crosswalk)
 
 		# prints new alias_name output so each user gets their full name conversion 
 		# fulfills release 1 request for individual user 
