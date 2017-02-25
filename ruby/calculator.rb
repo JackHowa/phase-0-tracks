@@ -15,7 +15,10 @@ def calculate(input)
 
 	calc_hash = {}
 
+	operators = ['*','/','+','-']
+
 	until done == true 
+
 
 		puts "What calculation would you like me to make?"
 		puts "[for instance, 4 + 5 ]"
@@ -30,6 +33,16 @@ def calculate(input)
 			calc_hash.each { |expression,output|
 				puts "#{expression} = #{output}"
 			}
+		elsif input.include? "x" # think multiply, writes x 
+			calc_input = input.gsub(/["x"]/," * ") # adding spaces so no conflict with space
+		elsif !(input.include? " ") # if it doesn't contain spaces, split won't play nicely
+			puts "Remember to add spaces between number and letters so I can see what to do :) "
+			puts "Nonetheless, #{count} operation(s) were still performed:"
+
+			calc_hash.each { |expression,output|
+				puts "#{expression} = #{output}"
+			}
+			done = true 
 		else 
 			calc_input = input 
 		end 
