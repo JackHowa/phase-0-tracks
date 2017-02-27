@@ -1,6 +1,6 @@
 class Santa
 
-	def initialize(gender,ethnicity)
+	def initialize(gender, ethnicity)
 		puts "Initializing new Santa instance..."
 		@gender = gender  
 		@ethnicity = ethnicity
@@ -10,15 +10,51 @@ class Santa
 		@age = 0 
 	end
 
-	def speak
-    	puts "Ho, ho, ho! Haaaappy holidays! I'm #{@gender} and #{@ethnicity}."
-  	end
-
- 	def eat_milk_and_cookies(cookie_type)
-  		puts "That was a good #{cookie_type}" 
+	def celebrate_birthday
+		@age += 1
 	end 
 
+	def get_mad_at(bad_reindeer)
+		@reindeer_ranking.delete(bad_reindeer)
+		@reindeer_ranking << bad_reindeer
+	end
+
+	def change_gender(new_gender)
+		@gender = new_gender
+		p @gender
+	end
+
+	def age
+		puts "Age: #{@age}" 
+	end
+
+	def ethnicity 
+		puts "Ethnicity: #{@ethnicity}"
+	end 
+
+
+	# def speak
+ #    	puts "Ho, ho, ho! Haaaappy holidays! I'm #{@gender} and #{@ethnicity}."
+ #  	end
+
+ # 	def eat_milk_and_cookies(cookie_type)
+ #  		puts "That was a good #{cookie_type}" 
+	# end 
+
 end
+
+brad = Santa.new("male","Italian")
+
+brad.celebrate_birthday
+
+brad.get_mad_at("Vixen")
+
+brad.change_gender("female")
+
+brad.age
+
+brad.ethnicity
+
 
 
 
@@ -32,11 +68,13 @@ end
 # release 2 
 
 
-Jack = Santa.new("male","German")
+# Jack = Santa.new("male","German")
 
-santas = []
-genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "definitely don't want to say", "Hell noo"]
-ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Programmer", "Human"]
-genders.length.times do |i|
-  santas << Santa.new(example_genders[i], example_ethnicities[i])
-end
+# santas = []
+# genders = ["agender", "female", "bigender", "male", "female", 
+#"gender fluid", "N/A", "definitely don't want to say", "Hell noo"]
+# ethnicities = ["black", "Latino", "white", "Japanese-African", 
+# "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Programmer", "Human"]
+# genders.length.times do |i|
+#   santas << Santa.new(example_genders[i], example_ethnicities[i])
+# end
