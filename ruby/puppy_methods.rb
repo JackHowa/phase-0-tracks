@@ -5,7 +5,12 @@ class Puppy
     toy
   end
 
+  
+
 end 
 
+# can call fetch 
+spot = Puppy.new
 
+spot.fetch("bone")
 
