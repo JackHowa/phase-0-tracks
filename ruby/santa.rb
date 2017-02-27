@@ -4,8 +4,18 @@ class Santa
 		puts "Initializing new Santa instance..."
 	end
 
+	def speak
+    	puts "Ho, ho, ho! Haaaappy holidays!"
+  	end
+
+ 	def eat_milk_and_cookies(cookie_type)
+  		puts "That was a good #{cookie_type}" 
+	end 
+
 end
 
-Kringle = Santa.new
+Jack = Santa.new
 
-Kringle.initialize
+Jack.speak
+
+Jack.eat_milk_and_cookies("chocolate chip cookie")
