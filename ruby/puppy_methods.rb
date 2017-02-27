@@ -6,7 +6,7 @@ class Puppy
   	end
 
  	def speak(num) 
-  	num.times {puts "Woof"} 
+  		num.times {puts "Woof"} 
 	end 
 
 	def roll_over
@@ -22,12 +22,19 @@ class Puppy
 		puts "Sit down!"
 	end  
 
+	# implicitly called 
+	# accidentally spelling initialize doesn't throw error
+	def initialize
+		puts "Initializing new puppy instance ..."
+	end 
+
 end 
 
 # can call fetch 
+# new triggers the initialize 
 spot = Puppy.new
 
-# spot.fetch("bone")
+spot.fetch("bone")
 
 # spot.speak(3)
 
@@ -35,5 +42,4 @@ spot = Puppy.new
 
 # p spot.dog_years(4)
 
-spot.sit
-
+# spot.sit
