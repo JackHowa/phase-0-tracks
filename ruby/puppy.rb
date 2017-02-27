@@ -60,3 +60,45 @@ spot.play_dead
 # we haven't defined the method yet 
 
 
+# Notice that you can call methods on the class itself (Puppy.new, for example), 
+# or on an instance of a class (some_puppy_instance.bark). Methods you call on a class are called class methods. 
+# Methods you call on an instance are called instance methods.
+
+
+
+# release 2 
+
+str = String.new
+
+# this sets up the new str instance within the String class 
+
+str.length
+# that looks up the instance method 
+
+
+str.empty?
+# huh true? 
+# basically str is created but it isn't anything 
+# sup.empty? returns error so that makes sense then 
+
+
+str += "huh."
+
+# this will add something within that str instance 
+
+# yep str.empty? is now false 
+
+
+greeting = String.new("hello")
+
+# this adds the instance greeting 
+# adds it to the String class 
+# fills the instance greeting with "hello"
+
+greeting.empty? # -> false 
+
+greeting.length
+greeting.upcase
+
+# both are examples of instance methods 
+
