@@ -19,9 +19,8 @@ class Santa
 		@reindeer_ranking << bad_reindeer
 	end
 
-	def change_gender(new_gender)
+	def gender=(new_gender)
 		@gender = new_gender
-		p @gender
 	end
 
 	def age
@@ -58,23 +57,22 @@ brad.ethnicity
 
 
 
-# Jack.speak
-
-# Jack.eat_milk_and_cookies("chocolate chip cookie")
-
-
-
-
 # release 2 
 
 
 # Jack = Santa.new("male","German")
 
+# Jack.speak
+
+# Jack.eat_milk_and_cookies("chocolate chip cookie")
+
 # santas = []
 # genders = ["agender", "female", "bigender", "male", "female", 
-#"gender fluid", "N/A", "definitely don't want to say", "Hell noo"]
+# "gender fluid", "N/A", "definitely don't want to say", "Hell noo"]
 # ethnicities = ["black", "Latino", "white", "Japanese-African", 
 # "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Programmer", "Human"]
 # genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
+#   santas << Santa.new(genders[i], ethnicities[i])
 # end
+
+# p santas 
