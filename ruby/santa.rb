@@ -1,5 +1,7 @@
 class Santa
 
+	attr_reader :age, ethnicity
+
 	def initialize(gender, ethnicity)
 		puts "Initializing new Santa instance..."
 		@gender = gender  
@@ -23,13 +25,13 @@ class Santa
 		@gender = new_gender
 	end
 
-	def age
-		puts "Age: #{@age}" 
-	end
+	# def age
+	# 	puts "Age: #{@age}" 
+	# end
 
-	def ethnicity 
-		puts "Ethnicity: #{@ethnicity}"
-	end 
+	# def ethnicity 
+	# 	puts "Ethnicity: #{@ethnicity}"
+	# end 
 
 
 	# def speak
