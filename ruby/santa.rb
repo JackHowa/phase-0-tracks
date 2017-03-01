@@ -23,60 +23,21 @@ class Santa
 		@reindeer_ranking << bad_reindeer
 	end
 
-	# def gender=(new_gender)
-	# 	@gender = new_gender
-	# end
-
-	# def age
-	# 	puts "Age: #{@age}" 
-	# end
-
-	# def ethnicity 
-	# 	puts "Ethnicity: #{@ethnicity}"
-	# end 
-
-
-	# def speak
- #    	puts "Ho, ho, ho! Haaaappy holidays! I'm #{@gender} and #{@ethnicity}."
- #  	end
-
- # 	def eat_milk_and_cookies(cookie_type)
- #  		puts "That was a good #{cookie_type}" 
-	# end 
-
 end
 
-brad = Santa.new("male","Italian")
-
-p brad.celebrate_birthday
-
-p brad.get_mad_at("Vixen")
-
-# brad.change_gender("female")
-
-brad.age
-
-brad.ethnicity
 
 
 
+Jack = Santa.new("male","German")
 
-# release 2 
+santas = []
 
+genders = [["agender", "female", "bigender", "male", "female", 
+"gender fluid", "N/A"].sample]
+ethnicities = [["black", "Latino", "white", "Japanese-African", 
+"prefer not to say"].sample]
+genders.cycle(100) do 
+  santas << Santa.new(genders, ethnicities)
+end
 
-# Jack = Santa.new("male","German")
-
-# Jack.speak
-
-# Jack.eat_milk_and_cookies("chocolate chip cookie")
-
-# santas = []
-# genders = ["agender", "female", "bigender", "male", "female", 
-# "gender fluid", "N/A", "definitely don't want to say", "Hell noo"]
-# ethnicities = ["black", "Latino", "white", "Japanese-African", 
-# "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Programmer", "Human"]
-# genders.length.times do |i|
-#   santas << Santa.new(genders[i], ethnicities[i])
-# end
-
-# p santas 
+p santas 
