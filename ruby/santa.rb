@@ -1,6 +1,6 @@
 class Santa
 
-	attr_reader :age, ethnicity
+	attr_reader :age
 
 	attr_accessor :gender, :ethnicity
 
@@ -48,11 +48,11 @@ end
 
 brad = Santa.new("male","Italian")
 
-brad.celebrate_birthday
+p brad.celebrate_birthday
 
-brad.get_mad_at("Vixen")
+p brad.get_mad_at("Vixen")
 
-brad.change_gender("female")
+# brad.change_gender("female")
 
 brad.age
 
