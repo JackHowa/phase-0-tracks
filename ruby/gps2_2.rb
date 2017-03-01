@@ -131,3 +131,41 @@ def grocery_lister(groceries)
 end 
 
 grocery_lister(groceries)
+
+# What did you learn about pseudocode from working on this challenge?
+
+# by pseudocoding this gps, I learned how to focus on order or sequence of logic. 
+# I also practiced using general terms rather than Ruby-specific ones.
+# At first, it was hard to avoid Ruby words; I was struggling, using vague ones. 
+# Yet my navigator helped a lot by recommending more specific readable, non-Ruby words. 
+
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+
+# Arrays can be helpful for sequential data;  
+# hashes are better for relational data between two data points, like item and quantity. 
+
+
+# What does a method return?
+
+# A method returns the last data point, like the last key value
+# Therefore, it's good practice to have a separate method for printing returns or values. 
+
+
+# What kind of things can you pass into methods as arguments?
+
+# You can pass through parameters like integers, strings and booleans as variables 
+
+
+# How can you pass information between methods?
+
+# YOu can pass info between methods using variables 
+# and setting those equal outside of the method 
+
+
+# What concepts were solidified in this challenge?
+# Concepts like method parameters and each logic 
+
+# and what concepts are still confusing?
+# Pseudocode syntax and vocab is still challenging 
+# Want to improve my algorithmic thinking 
