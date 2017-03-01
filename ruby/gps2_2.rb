@@ -21,19 +21,19 @@
 
 def grocery_itemizer(grocery_string)
 
-	grocery_defaults = {}
+	groceries = {}
 
 	itemized_array = grocery_string.split
 
 	itemized_array.each do |food|
-		grocery_defaults[food] = 1
+		groceries[food] = 1
 	end 
 
-	return grocery_defaults
+	return groceries
 
 end 
 
-grocery_defaults = grocery_itemizer("carrots apples cereal pizza")
+groceries = grocery_itemizer("carrots apples cereal pizza")
 
 # grocery_string = "carrots apples cereal pizza"
 
@@ -56,14 +56,14 @@ grocery_name = ""
 
 grocery_quanity = ""
 
-def grocery_adder(grocery_defaults,grocery_name,grocery_quanity)
+def grocery_adder(groceries,grocery_name,grocery_quanity)
 	
-	grocery_defaults[grocery_name] = grocery_quanity
+	groceries[grocery_name] = grocery_quanity
 
-	return grocery_defaults
+	return groceries
 end 
 
-grocery_defaults = grocery_adder(grocery_defaults,"soup",2)
+groceries = grocery_adder(groceries,"soup",2)
 
 # Method to remove an item from the list
 
@@ -73,17 +73,17 @@ grocery_defaults = grocery_adder(grocery_defaults,"soup",2)
 # show that updated list with quanities 
 # store the updated list with quanities 
 
-def grocery_deleter(grocery_defaults,item_delete)
+def grocery_deleter(groceries,item_delete)
 
-	grocery_defaults.delete(item_delete)
+	groceries.delete(item_delete)
 
-	return grocery_defaults
+	return groceries
 
 end 
 
-grocery_defaults = grocery_deleter(grocery_defaults,"soup")
+groceries = grocery_deleter(groceries,"soup")
 
-# p grocery_defaults
+# p groceries
 
 
 # input:
@@ -102,25 +102,32 @@ grocery_defaults = grocery_deleter(grocery_defaults,"soup")
 # Show the updated list 
 # store the updated list 
 
-def grocery_updater(grocery_defaults,grocery_update,new_quanity)
+def grocery_updater(groceries,item_update,new_quanity)
 
-	grocery_defaults[grocery_update] = new_quanity
+	groceries[item_update] = new_quanity
 
-	return grocery_defaults
+	return groceries
 
 end 
 
-grocery_defaults = grocery_updater(grocery_defaults,"carrots",3)
-
-p grocery_defaults
-
-
-
+groceries = grocery_updater(groceries,"carrots",3)
 
 # steps:
 # output:
 
 # Method to print a list and make it look pretty
+# input the whole updated list into grocery lister 
+# FOR every item
+	# list the item and the quantity to buy 
+
 # input:
 # steps:
 # output:
+
+def grocery_lister(groceries)
+	groceries.each do |grocery,quantity|
+		puts "Buy #{quantity} #{grocery}(s) at the grocery store."
+	end 
+end 
+
+grocery_lister(groceries)
