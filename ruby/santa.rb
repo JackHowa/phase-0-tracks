@@ -1,35 +1,27 @@
 class Santa
 
-	attr_reader :age
+	attr_accessor :gender, :ethnicity, :age 
 
-	attr_accessor :gender, :ethnicity
-
-	def initialize(gender, ethnicity)
-		puts "Initializing new Santa instance..."
+	def initialize(gender,ethnicity)
+		# puts "Initializing new Santa instance..."
 		@gender = gender  
 		@ethnicity = ethnicity
-		@reindeer_ranking = 
-			["Rudolph", "Dasher", "Dancer", "Prancer", 
-				"Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0 
+		@age = rand(140)
 	end
-
-	def rando_age(age)
-		age = rand(0..140)
-		p age
-	end 
 
 end
 
 santas = []
 
-genders = [["agender", "female", "bigender", "male", "female", 
-"gender fluid", "N/A"].sample]
-ethnicities = [["black", "Latino", "white", "Japanese-African", 
-"prefer not to say"].sample]
+genders = ["agender", "female", "bigender", "male", "female", 
+"gender fluid", "N/A"]
 
-genders.cycle(100) do 
-  santas << Santa.new(genders, ethnicities)
+ethnicities = ["black", "Latino", "white", "Japanese-African", 
+"prefer not to say"]
+
+
+100.times do 
+	santas << Santa.new(genders[rand(genders.length)], ethnicities[rand(ethnicities.length)])
 end
 
-santas.rando_age(@age)
+p santas 
