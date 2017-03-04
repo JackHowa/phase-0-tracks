@@ -9,7 +9,35 @@ class Santa
 		@age = rand(140)
 	end
 
-end
+
+	# def gender=(new_gender)		
+ 	# 	@gender = new_gender		
+ 	# end		
+ 		
+ 	# def age		
+ 	# 	puts "Age: #{@age}" 		
+ 	# end		
+ 		
+ 	# def ethnicity 		
+ 	# 	puts "Ethnicity: #{@ethnicity}"		
+ 	# end 	
+
+ 	 	# def speak		
+  #    	puts "Ho, ho, ho! Haaaappy holidays! I'm #{@gender} and #{@ethnicity}."		
+  #  	end		
+ 		
+  # 	def eat_milk_and_cookies(cookie_type)		
+  #  		puts "That was a good #{cookie_type}" 		
+ 	# end 
+
+ # Jack = Santa.new("male","German")		
+	
+ # Jack.speak		
+ 	
+ # Jack.eat_milk_and_cookies("chocolate chip cookie")
+
+
+# release 4 
 
 santas = []
 
@@ -25,3 +53,7 @@ ethnicities = ["black", "Latino", "white", "Japanese-African",
 end
 
 p santas 
+
+	
+ 		
+ 		
