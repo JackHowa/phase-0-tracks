@@ -39,8 +39,21 @@
 	# show the solution
 	# show discouraging message 
 
+class WordGame
 
+	attr_reader :guess_count, :end_game 
 
+	def initialize("solution")
+    	@solution = solution
+    	p solution
+    	@guess_count = 0
+    	@end_game = false
+    	puts "Initializing game ..."
+ 	end
+
+end 
+
+solution.new 
 
 
 
