@@ -49,7 +49,7 @@ class WordGame
     	@guess_count = 0
     	@end_game = false
     	@letter = "o"
-    	@letter_slots = "___"
+    	@letter_slots = ("_ " * @solution.length).split(' ')
  	end
 
   	def split_solution
@@ -61,29 +61,34 @@ class WordGame
   	end 
 
   	def end_game 
+
+  		p @letter_slots
+
   		if !@letter_slots.include?("_")
 			@end_game = true
+			p @end_game
 		else
 			@end_game = false
+			p @end_game
 		end
   	end 
 
 
-  	def start_game 
+ #  	def start_game 
  		
- 		until @guess_limit == @guess_count 
+ # 		until @guess_limit == @guess_count 
  		
- 		@guess_count =+ 1
+ # 		@guess_count =+ 1
 	
-			if @solution.include?(@letter)
-				puts "yep"
-			else 
-				puts "nope"
-			end 
+	# 		if @solution.include?(@letter)
+	# 			puts "yep"
+	# 		else 
+	# 			puts "nope"
+	# 		end 
 
- 		end 
+ # 		end 
 			  	
-	end
+	# end
 
 end 
 
