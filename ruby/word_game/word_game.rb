@@ -14,6 +14,7 @@
 	# measure stored words's length 
 		# double the word's length 
 			# store that as the guess limit 
+
 # UNTIL guess limit is equal to number of guesses 
 	# prompt a second user to enter a letter 
 		# compare that letter to the stored word 
@@ -41,12 +42,13 @@
 
 class WordGame
 
-	attr_reader :guess_count, :end_game 
+	attr_reader :guess_count
 
 	def initialize(solution)
     	@solution = solution
     	@guess_count = 0
     	@end_game = false
+    	@letter = "o"
  	end
 
   	def split_solution
@@ -54,24 +56,28 @@ class WordGame
   	end 
 
   	def measure_solution
-  		p @solution
-  		guess_limit = (@solution.length)*2
-  		p guess_limit
+  		@guess_limit = (@solution.length)*2
   	end 
 
-  	def guess_timer
+  	def start_game 
 
- 		p @guess_count
+ 		p @guess_limit
 
-  		@guess_count += 1
+ 		p @end_game
 
-  		p @guess_count
-  	
-	  	if @guess_limit == @guess_count
-	  		@end_game = true
-	  	end
+ 		if @guess_limit == @guess_count 
+ 			p "yep"
+ 		else 
+ 			p "nope"
+ 		end 
 
-	  	p @end_game
+ 		# until @guess_limit == @guess_count 
+
+ 		# 		if solution.include(@letter)?
+			#   		p "yep"
+			#   	else 
+			#   		false 
+			#   	end 
 	  	
 	end
 
@@ -92,11 +98,7 @@ game.split_solution
 
 game.measure_solution
 
-@guess_limit.times do 
-
-	game.guess_timer
-
-end 
+game.start_game
 
 
 # user guesser interface 
