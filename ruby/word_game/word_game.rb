@@ -42,13 +42,14 @@
 
 class WordGame
 
-	attr_reader :guess_count
+	attr_accessor :guess_count
 
 	def initialize(solution)
     	@solution = solution
     	@guess_count = 0
     	@end_game = false
     	@letter = "o"
+    	@letter_slots = "___"
  	end
 
   	def split_solution
@@ -59,26 +60,29 @@ class WordGame
   		@guess_limit = (@solution.length)*2
   	end 
 
+  	def end_game 
+  		if !@letter_slots.include?("_")
+			@end_game = true
+		else
+			@end_game = false
+		end
+  	end 
+
+
   	def start_game 
+ 		
+ 		until @guess_limit == @guess_count 
+ 		
+ 		@guess_count =+ 1
+	
+			if @solution.include?(@letter)
+				puts "yep"
+			else 
+				puts "nope"
+			end 
 
- 		p @guess_limit
-
- 		p @end_game
-
- 		if @guess_limit == @guess_count 
- 			p "yep"
- 		else 
- 			p "nope"
  		end 
-
- 		# until @guess_limit == @guess_count 
-
- 		# 		if solution.include(@letter)?
-			#   		p "yep"
-			#   	else 
-			#   		false 
-			#   	end 
-	  	
+			  	
 	end
 
 end 
@@ -98,8 +102,9 @@ game.split_solution
 
 game.measure_solution
 
-game.start_game
+# game.start_game
 
+game.end_game
 
 # user guesser interface 
 
