@@ -43,17 +43,36 @@ class WordGame
 
 	attr_reader :guess_count, :end_game 
 
-	def initialize("solution")
+	def initialize(solution)
     	@solution = solution
-    	p solution
+    	p @solution
     	@guess_count = 0
     	@end_game = false
     	puts "Initializing game ..."
  	end
 
+ 	def check_word(index)
+
+  		@guess_count += 1
+  	
+	  	if @solution[index] == "ball"
+	  		@end_game = true
+	  	else
+	  		@end_game = false 
+	  	end
+	end 
+
+  	def prep_solution
+  		p @solution 
+  	end 
+
 end 
 
-solution.new 
+puts "This is the Word Game!"
+game = WordGame.new("hello")
+
+puts "Inputting word ... "
+game.prep_solution
 
 
 
