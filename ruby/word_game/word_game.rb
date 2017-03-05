@@ -45,34 +45,66 @@ class WordGame
 
 	def initialize(solution)
     	@solution = solution
-    	p @solution
     	@guess_count = 0
     	@end_game = false
-    	puts "Initializing game ..."
  	end
 
- 	def check_word(index)
+  	def split_solution
+  		@solution = @solution.split("")
+  	end 
+
+  	def measure_solution
+  		p @solution
+  		guess_limit = (@solution.length)*2
+  		p guess_limit
+  	end 
+
+  	def guess_timer
+
+ 		p @guess_count
 
   		@guess_count += 1
-  	
-	  	if @solution[index] == "ball"
-	  		@end_game = true
-	  	else
-	  		@end_game = false 
-	  	end
-	end 
 
-  	def prep_solution
-  		p @solution 
-  	end 
+  		p @guess_count
+  	
+	  	if @guess_limit == @guess_count
+	  		@end_game = true
+	  	end
+
+	  	p @end_game
+	  	
+	end
 
 end 
 
-puts "This is the Word Game!"
-game = WordGame.new("hello")
+# user setter interface 
+puts "Hello word-setter user. This is the word game."
+puts "What word do you want the other user to guess?"
+
+solution = gets.chomp 
+
+game = WordGame.new(solution)
+
 
 puts "Inputting word ... "
-game.prep_solution
+
+game.split_solution
+
+game.measure_solution
+
+@guess_limit.times do 
+
+	game.guess_timer
+
+end 
+
+
+# user guesser interface 
+
+# puts "This is the Word Game!"
+
+
+
 
 
 
