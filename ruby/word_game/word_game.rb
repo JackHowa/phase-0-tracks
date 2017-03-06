@@ -151,7 +151,12 @@ game.measure_solution
 
 # puts "This is the Word Game!"
 
-game.start_game("o")
+
+puts "Hi there, what letter would you like to guess?"
+
+letter = gets.chomp 
+
+game.start_game(letter)
 
 game.end_game
 
