@@ -42,53 +42,102 @@
 
 class WordGame
 
-	attr_accessor :guess_count
+	attr_reader :guess_count, :letter_slots, :guess_count, :end_game, :solution, :letter, :guess_limit
 
-	def initialize(solution)
-    	@solution = solution
+	def initialize(letter)
+    	@solution = ""
     	@guess_count = 0
     	@end_game = false
-    	@letter = "o"
-    	@letter_slots = ("_ " * @solution.length).split(' ')
+    	@letter = letter 
+    	@letter_slots = ""
+    	@guessed_letters = []
+    	@guess_limit = guess_limit
+    	@solution_length = 5
+
  	end
 
   	def split_solution
   		@solution = @solution.split("")
   	end 
 
+  	def letter_slots
+  		@solution_length.times do 
+			@letter_slots << "_"
+		end
+		# p @letter_slots
+		# p @solution
+		# p @solution.length
+  	end 
+
   	def measure_solution
+  		@solution_length = @solution.length
   		@guess_limit = (@solution.length)*2
   	end 
 
-  	def end_game 
+  	def end_game
 
   		p @letter_slots
 
   		if !@letter_slots.include?("_")
 			@end_game = true
-			p @end_game
 		else
 			@end_game = false
-			p @end_game
 		end
+
   	end 
 
 
- #  	def start_game 
+  	def start_game
  		
- # 		until @guess_limit == @guess_count 
- 		
- # 		@guess_count =+ 1
-	
-	# 		if @solution.include?(@letter)
-	# 			puts "yep"
-	# 		else 
-	# 			puts "nope"
-	# 		end 
+ 		@guess_count =+ 1
 
- # 		end 
+ 		guess_letter(letter)
+
+			if @solution.include?(@letter)
+
+				fill_word(letter)
+
+				puts "Yay - nice work. You guessed a letter or letters in the word."
+
+			else 
+				puts "Nope - try another letter."
+			end 
+
+			puts "You've guessed #{@guess_count} time(s)."
+			@guess_count
 			  	
-	# end
+	end
+
+	def guess_letter(letter)
+
+			if @guessed_letters.include?(letter)
+
+				puts "You've tried that one! Guess again :) "
+
+				@guess_count -= 1
+
+			else
+
+				@guessed_letters << letter
+
+			end
+	end
+
+	def fill_word(letter)
+		p @letter
+
+		i = 0
+		while i < @guess_limit
+
+			if @solution[i] == letter
+
+				@letter_slots[i] = letter
+
+			end
+		i += 1
+		end
+		@letter_slots
+	end 
 
 end 
 
@@ -101,19 +150,34 @@ solution = gets.chomp
 game = WordGame.new(solution)
 
 
-puts "Inputting word ... "
+# puts "Inputting word ... "
 
 game.split_solution
 
 game.measure_solution
 
-# game.start_game
+game.letter_slots
 
-game.end_game
+
+
 
 # user guesser interface 
 
 # puts "This is the Word Game!"
+
+
+
+
+puts "Hi there, what letter would you like to guess?"
+
+letter = gets.chomp 
+
+game.start_game
+
+game.end_game
+
+
+
 
 
 
