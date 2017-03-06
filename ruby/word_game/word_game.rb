@@ -42,7 +42,7 @@
 
 class WordGame
 
-	attr_reader :guess_count, :letter_slots, :guess_count, :end_game, :solution, :letter
+	attr_reader :guess_count, :letter_slots, :guess_count, :end_game, :solution, :letter, :guess_limit
 
 	def initialize(solution)
     	@solution = solution
@@ -51,6 +51,7 @@ class WordGame
     	@letter = "o"
     	@letter_slots = ("_" * @solution.length).split("")
     	@guessed_letters = []
+    	@guess_limit = guess_limit
 
  	end
 
@@ -62,7 +63,7 @@ class WordGame
   		@guess_limit = (@solution.length)*2
   	end 
 
-  	def end_game 
+  	def end_game
 
   		p @letter_slots
 
@@ -91,7 +92,7 @@ class WordGame
 				puts "Nope - try another letter."
 			end 
 
-			p @guess_count
+			puts "You've guessed #{@guess_count} time(s)."
 			  	
 	end
 
@@ -112,6 +113,18 @@ class WordGame
 
 	def fill_word(letter)
 		p @letter
+
+		i = 0
+		while i < @guess_limit
+
+			if @solution[i] == letter
+
+				@letter_slots[i] = letter
+
+			end
+		i += 1
+		end
+		@letter_slots
 	end 
 
 end 
@@ -125,7 +138,7 @@ solution = gets.chomp
 game = WordGame.new(solution)
 
 
-puts "Inputting word ... "
+# puts "Inputting word ... "
 
 game.split_solution
 
@@ -140,7 +153,7 @@ game.measure_solution
 
 game.start_game("o")
 
-game.end_game("0")
+game.end_game
 
 
 
