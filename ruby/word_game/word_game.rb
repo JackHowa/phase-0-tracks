@@ -49,7 +49,8 @@ class WordGame
     	@guess_count = 0
     	@end_game = false
     	@letter = "o"
-    	@letter_slots = ("_ " * @solution.length).split(' ')
+    	@letter_slots = ("_" * @solution.length).split("")
+
  	end
 
   	def split_solution
@@ -74,21 +75,30 @@ class WordGame
   	end 
 
 
- #  	def start_game 
+  	def start_game(index) 
  		
- # 		until @guess_limit == @guess_count 
+ 		until @guess_limit == @guess_count 
  		
- # 		@guess_count =+ 1
+ 		@guess_count =+ 1
 	
-	# 		if @solution.include?(@letter)
-	# 			puts "yep"
-	# 		else 
-	# 			puts "nope"
-	# 		end 
+			if @solution.include?(@letter)
+				puts "yep"
+			else 
+				@false 
+			end 
 
- # 		end 
+ 		end 
 			  	
-	# end
+	end
+
+	def check_cup(index)
+    @guess_count += 1
+    if @cups[index] == "ball"
+      @is_over = true
+    else
+      false
+    end
+  end
 
 end 
 
