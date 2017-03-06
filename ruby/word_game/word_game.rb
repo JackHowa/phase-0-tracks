@@ -91,15 +91,6 @@ class WordGame
 			  	
 	end
 
-	def check_cup(index)
-    @guess_count += 1
-    if @cups[index] == "ball"
-      @is_over = true
-    else
-      false
-    end
-  end
-
 end 
 
 # user setter interface 
