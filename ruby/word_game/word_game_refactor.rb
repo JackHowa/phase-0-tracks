@@ -1,3 +1,46 @@
+# pseudo 
+# 
+
+# handle input and output as far as the user is concerned
+
+# one user enters word 
+# a second user guesses the word with letters 
+# Guesses are limited, and the number of guesses available is related to the length of the word.
+
+# repeated letters not penalized - just dumb 
+
+# prompt one user to enter a word
+	# store that word 
+	# measure stored words's length 
+		# double the word's length 
+			# store that as the guess limit 
+
+# UNTIL guess limit is equal to number of guesses 
+	# prompt a second user to enter a letter 
+		# compare that letter to the stored word 
+			# IF letter is in word 
+				# add that letter to the guessed letters list 
+				# show encouraging message
+				# Make the guessed current word include that letter
+			# ELSIF letter is already in guessed letters list 
+				# show all the letters in the word already guessed 
+				# print out already-guessed letters 
+				# subtract one guess from the count (same effect and easier than adding to rest)
+			# ELSE 
+				# show discouraging message 
+				# add one guess to the guess list 
+		# Add one guess to the guess count 
+		# show all of the letters in the word that are present 
+
+	# IF guessed word is equal to word solution
+		# Show encouraging message
+		# Change guess limit end to being true and stop the prompting 
+
+# IF guessed word is not equal to word solution before number of guesses is equal to solution length 
+	# show the solution
+	# show discouraging message 
+
+
 class WordGame
 
 	attr_reader :solution, :guess_limit, :hangman_line, :guess_count, :letter, :loop 
@@ -31,7 +74,6 @@ class WordGame
 		end 
 
 		puts "You've guessed #{@guess_count} time(s)."
-		@guess_count
  	end 
 
 
@@ -47,15 +89,20 @@ class WordGame
 			end
 		i += 1
 		end
-		p @hangman_line
+		puts "Here's how far you are: #{@hangman_line}"
 	end 
+
+
 
 	def check_end
 
-		if @guess_count == @guess_limit
-			@loop = false 
+		if @guess_count < @guess_limit
+			@loop = true  
+			p "loop is true"
 		else 
-			@loop = true 
+			@loop = false 
+			puts "Sorry you lost"
+			abort
 		end 
 
 	end 
@@ -71,8 +118,6 @@ class WordGame
 		else
 
 			@guessed_letters << letter
-
-
 
 		end
 
@@ -123,16 +168,15 @@ game = WordGame.new(solution)
 puts ""
 puts "Alright, hopefully you didn't see that word."
 
-until @loop == false
+until @loop == false 
 
 	puts "What letter do you want to guess?"
 
 	letter = gets.chomp 
 
 	game.guess_game(letter)
-
+	game.check_end
 end 
-
 
 
 
