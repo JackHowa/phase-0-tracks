@@ -7,29 +7,79 @@ class WordGame
     	@guess_limit = @solution.length
     	@hangman_line = "_" * @guess_limit
     	@guess_count = 0
-    	@letter = []
+    	@letter = ""
     	@guessed_letters = []
     	@loop = true
  	end
 
- 	def print_variables
- 		p @solution
- 		p @guess_limit
- 		p @hangman_line
- 		p @guess_count
+ 	def guess_game(letter)
+
+ 		@guess_count += 1
+
+ 		guess_letter(letter)
+
+ 		if @solution.include?(letter)
+
+			fill_word(letter)
+
+			puts "Yay - nice work. You guessed a letter or letters in the word."
+
+		else 
+
+			puts "Nope - try another letter."
+
+		end 
+
+		puts "You've guessed #{@guess_count} time(s)."
+		@guess_count
  	end 
 
- 	def start_game(letter)
 
- 		p @guess_count
+	def fill_word(letter) 
 
- 		@guess_count =+ 1
+		i = 0
+		while i < @solution.length
 
- 		p @guess_count
+			if @solution[i] == letter
 
- 		p @letter
+				@hangman_line[i] = letter
 
- 	end 
+			end
+		i += 1
+		end
+		p @hangman_line
+	end 
+
+	def check_end
+
+		if @guess_count == @guess_limit
+			@loop = false 
+		else 
+			@loop = true 
+		end 
+
+	end 
+
+	def guess_letter(letter)
+
+	 	if @guessed_letters.include?(letter)
+
+			puts "You've tried that one! Guess again :) "
+
+			@guess_count -= 1
+
+		else
+
+			@guessed_letters << letter
+
+
+
+		end
+
+	end
+
+
+
 
 end 
 
@@ -47,18 +97,43 @@ solution = gets.chomp
 
 game = WordGame.new(solution)
 
-game.print_variables
+
+ 	# UNTIL guess limit is equal to number of guesses 
+	# prompt a second user to enter a letter 
+		# compare that letter to the stored word 
+			# IF letter is in word 
+				# add that letter to the guessed letters list 
+				# show encouraging message
+				# Make the guessed current word include that letter
+			# ELSIF letter is already in guessed letters list 
+				# show all the letters in the word already guessed 
+				# print out already-guessed letters 
+				# subtract one guess from the count (same effect and easier than adding to rest)
+			# ELSE 
+				# show discouraging message 
+				# add one guess to the guess list 
+		# Add one guess to the guess count 
+		# show all of the letters in the word that are present 
 
 
 # user solution-guesser 
 
+
+ 
 puts ""
 puts "Alright, hopefully you didn't see that word."
-puts "What letter do you want to guess?"
 
-letter = gets.chomp 
+until @loop == false
 
-game.start_game(letter)
+	puts "What letter do you want to guess?"
+
+	letter = gets.chomp 
+
+	game.guess_game(letter)
+
+end 
+
+
 
 
 
