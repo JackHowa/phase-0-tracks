@@ -7,9 +7,9 @@ describe Dancer do
     expect(dancer.pirouette).to eq "*twirls*"
   end
 
-  # it "bows to a partner" do
-  #   expect(dancer.bow).to eq "*bows*"
-  # end
+  it "bows to a partner" do
+    expect(dancer.bow).to eq "*bows*"
+  end
 
   it "has a readable name" do
     expect(dancer.name).to eq "Misty Copeland"
@@ -28,17 +28,18 @@ describe Dancer do
   #   expect(dancer.card).to eq []
   # end
 
-  # it "can queue parters on the dance card" do
-  #   dancer.queue_dance_with("Mikhail Baryshnikov")
-  #   expect(dancer.card).to eq ["Mikhail Baryshnikov"]
-  #   dancer.queue_dance_with("Anna Pavlova")
-  #   expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova"]
-  # end
+  it "can queue parters on the dance card" do
+    dancer.queue_dance_with("Mikhail Baryshnikov")
+    expect(dancer.card).to eq ["Mikhail Baryshnikov"]
+    
+    dancer.queue_dance_with("Anna Pavlova")
+    expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova"]
+  end
 
-  # it "can start next dance from queue" do
-  #   dancer.queue_dance_with("Mikhail Baryshnikov")
-  #   dancer.queue_dance_with("Anna Pavlova")
-  #   expect(dancer.begin_next_dance).to eq "Now dancing with Mikhail Baryshnikov."
-  #   expect(dancer.card).to eq ["Anna Pavlova"]
-  # end
+  it "can start next dance from queue" do
+    dancer.queue_dance_with("Mikhail Baryshnikov")
+    dancer.queue_dance_with("Anna Pavlova")
+    expect(dancer.begin_next_dance).to eq "Now dancing with Mikhail Baryshnikov."
+    expect(dancer.card).to eq ["Anna Pavlova"]
+  end
 end
