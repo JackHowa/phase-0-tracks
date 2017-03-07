@@ -15,6 +15,10 @@ describe Dancer do
     expect(dancer.name).to eq "Misty Copeland"
   end
 
+  it "spins in the performance" do 
+    expect(dancer.spin).to eq "*spin*"
+  end 
+
   it "has a readable age" do
     expect(dancer.age).to eq 33
   end
@@ -24,14 +28,14 @@ describe Dancer do
     expect(dancer.age).to eq 34
   end
 
-  # it "keeps a readable dance card" do
-  #   expect(dancer.card).to eq []
-  # end
+  it "keeps a readable dance card" do
+    expect(dancer.card).to eq []
+  end
 
   it "can queue parters on the dance card" do
     dancer.queue_dance_with("Mikhail Baryshnikov")
     expect(dancer.card).to eq ["Mikhail Baryshnikov"]
-    
+
     dancer.queue_dance_with("Anna Pavlova")
     expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova"]
   end
@@ -42,4 +46,6 @@ describe Dancer do
     expect(dancer.begin_next_dance).to eq "Now dancing with Mikhail Baryshnikov."
     expect(dancer.card).to eq ["Anna Pavlova"]
   end
+
+
 end

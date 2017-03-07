@@ -1,6 +1,7 @@
 class Dancer 
 
-	attr_accessor :name, :age, :card
+	attr_reader :name
+	attr_accessor :age, :card
 
         def initialize(name,age)
             @name = name
@@ -9,11 +10,11 @@ class Dancer
         end
 
         def pirouette
-        	"*twirls*"
+        	p "*twirls*"
         end 
 
         def bow
-        	"*bows*"
+        	p "*bows*"
         end 
 
         def queue_dance_with(partner)
@@ -23,6 +24,12 @@ class Dancer
         def begin_next_dance
         	new_partner = card.shift
         	"Now dancing with #{new_partner}."
+        end 
+
+        # spinning is seems important for a dancer
+        # printing the spin string for direction
+        def spin 
+        	p "*spin*"
         end 
 
 
