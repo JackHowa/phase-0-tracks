@@ -2,6 +2,9 @@
 #this data is updated every year with estimates from a 10 year census
 
 
+# constant is a data set that won't change over the course of program
+# 
+
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},
