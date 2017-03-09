@@ -88,7 +88,7 @@ class VirusPredictor
       end)
 
       # in a similar way refactor setting seemingly indexed variable equal to conditional output
-
+      # not sure if parens necc
     puts " and will spread across the state in #{speed} months.\n\n"
 
   end
