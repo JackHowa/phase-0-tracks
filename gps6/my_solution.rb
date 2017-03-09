@@ -18,6 +18,12 @@ class VirusPredictor
     @population_density = population_density
   end
 
+    # maybe keeps some code private?
+    # special keyword used 
+    # public, private, protected = similar to html5 
+    # make anything later unavailable outside of the class 
+
+
   # method that works as a fork and splits the data basically into other methods
   # in this case, it works to make the driver code more concise, rather than
   # calling the other methods it refers to 
@@ -26,9 +32,8 @@ class VirusPredictor
     predicted_deaths
     speed_of_spread
   end
-
-  # maybe keeps some code private?
   private
+
 
   # inputs the parameters from the virus_effects fork 
   # uses conditional logic to apply different fatality rates upon different states
@@ -37,17 +42,23 @@ class VirusPredictor
   # print statement shows user expected fatalities as an integer 
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor # built-in ruby method, rounds down to nearest int
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
+
+    # set number of death equal to conditional output
+    number_of_deaths = 
+      (if @population_density >= 200
+        @population * 0.4 # built-in ruby method, rounds down to nearest int
+      elsif @population_density >= 150
+        @population * 0.3
+      elsif @population_density >= 100
+        @population * 0.2
+      elsif @population_density >= 50
+        @population * 0.1
+      else
+        @population * 0.05
+      end).floor
+
+    # refactor floor into the output rather than the work bc repetition 
+
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -63,19 +74,20 @@ class VirusPredictor
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    speed = 0.0
+    speed = 
+      (if @population_density >= 200
+        0.5
+      elsif @population_density >= 150
+        1
+      elsif @population_density >= 100
+        1.5
+      elsif @population_density >= 50
+        2
+      else
+        2.5
+      end)
 
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
-    else
-      speed += 2.5
-    end
+      # in a similar way refactor setting seemingly indexed variable equal to conditional output
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -98,8 +110,8 @@ end
 # california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
 # california.virus_effects
 
-# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-# alaska.virus_effects
+alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+alaska.virus_effects
 
 STATE_DATA.each do |state_name,state_attributes|
 
@@ -111,3 +123,9 @@ end
 
 #=======================================================================
 # Reflection Section
+
+
+# refactor release 7 
+# repeated code, data changes?
+# case statements?
+
