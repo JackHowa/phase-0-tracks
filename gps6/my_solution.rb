@@ -123,9 +123,30 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin 
 
+What are the differences between the two different hash syntaxes shown in the state_data file?
 
-# refactor release 7 
-# repeated code, data changes?
-# case statements?
+One hash syntax is a hash syntax within another hash. The bigger hash has a string as the key, 
+while the hash within uses symbols for its two keys.
+
+What does require_relative do? How is it different from require?
+
+Require_relative includes require in its call. Require relative is also more specific 
+in calling where the file is called from, while require needs to include more about the file path.
+
+What are some ways to iterate through a hash?
+
+You can iterate through a hash with each. You can also iterate through a hash using an index 
+or map.  
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+The variables were not necessary when they were global in scope. 
+
+What concept did you most solidify in this challenge?
+
+Using hashes within a hash was a new concept for me within an each loop. 
+
+=end 
 
