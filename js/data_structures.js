@@ -28,6 +28,10 @@ function Car(type, year, working) {
 
 }
 
-var newCar = new Car("jeep",1994,true)
+var newCar = new Car("jeep",1994,true);
+var newCar1 = new Car("honda",1990,true);
+var newCar2 = new Car("volvo",2002,true);
 
 newCar.honk()
+newCar1.honk()
+newCar2.honk()
