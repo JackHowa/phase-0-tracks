@@ -30,8 +30,11 @@ console.log(longestPhrase(greetings))
 
 // Release 1
 
-// function pairMatcher() 
+function pairMatcher(object1,object2) {
 
+}
 
+object1 = {name: "Steven", age: 54}
+object2 = {name: "Tamir", age: 54}
 
 
