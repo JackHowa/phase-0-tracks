@@ -9,11 +9,15 @@
 // Show the new word 
 
 var stringReverser = function(word) {
-	var length = word.length
-	console.log(word)
-	console.log(length)
-
-
+	for (var i = 0; i < word.length; i++) {
+		letter = word[i]
+		console.log(letter);
+	}
 }
 
-stringReverser("Jack")
+if(3 > 2) {
+	stringReverser("Jack")
+}
+else {
+	console.log("Error Error Error")
+}
