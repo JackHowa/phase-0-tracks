@@ -9,9 +9,12 @@
 // Show the new word 
 
 var stringReverser = function(word) {
+	var new_word = ""
 	for (var i = 0; i < word.length; i++) {
-		letter = word[i]
-		console.log(letter);
+		letter = word[i];
+		new_word += word[i]
+		console.log(new_word)
+		// console.log(letter);
 	}
 }
 
