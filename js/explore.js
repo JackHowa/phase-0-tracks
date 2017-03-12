@@ -8,3 +8,10 @@
 // 		Assign that letter to its new position of that result 
 // Show the new word 
 
+var stringReverser = function(word) {
+	console.log(word)
+
+	
+}
+
+stringReverser("Jack")
