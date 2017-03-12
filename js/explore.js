@@ -5,7 +5,7 @@
 // FOR each letter 
 // 		Take the letter's position at the end
 // 		Assign that letter to its new position next in line in front
-// Show the new word 
+// Show the new word after if then
 
 var stringReverser = function(word) {
 	var new_word = ""
