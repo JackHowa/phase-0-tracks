@@ -1,17 +1,29 @@
-var longestPhrase = function(phrases) {
-	for (var i = 0;i < phrases.length; i++) {
-		if (phrases[i].length > phrases[i+1].length) {
-			console.log("yep")
-		}
-		else {
-			console.log("nope")
-			// phrases.splice(i);
-		}
+// Set a holder for longest phrase length to zero
+// Set a holder for longest phrase to empty 
+// FOR every word in the phrase list 
+//		IF that word's length is greater than current longest phrase length 
+//			Make that word's length the new longest phrase length
+//			Make that word the the new longest phrase 
+// Show the longest phrase
 
-		console.log(phrases)
-		// bubble sort? 
-		// print the first one after looping through all 
+function longestPhrase(arr) {
+	var longestLength = 0;
+	var longestPhrase = "";
+	for (var i = 0;i < arr.length; i++) {
+		if (arr[i].length > longestLength)
+			longestPhrase = arr[i]
+			longestLength = longestPhrase.length 
 	}
+	return longestPhrase
 }
 
-longestPhrase(["long phrase","longest phrase","longer phrase"])
+
+
+// driver code 
+arr = ["long phrase","longest phrase","longer phrase"];
+
+console.log(longestPhrase(arr));
+
+
+
+
