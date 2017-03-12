@@ -24,6 +24,8 @@ arr = ["long phrase","longest phrase","longer phrase"];
 
 console.log(longestPhrase(arr));
 
+greetings = ["hello","bonjourno","hola"]
 
+console.log(longestPhrase(greetings))
 
 
