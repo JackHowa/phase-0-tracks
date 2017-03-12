@@ -9,9 +9,11 @@
 // Show the new word 
 
 var stringReverser = function(word) {
+	var length = word.length
 	console.log(word)
+	console.log(length)
 
-	
+
 }
 
 stringReverser("Jack")
