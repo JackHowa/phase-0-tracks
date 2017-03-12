@@ -1,4 +1,4 @@
-var colors = ["blue","read","orange","violet"];
+var colors = ["blue","red","orange","violet"];
 
 var names = ["Paul","Ringo","John","George"];
 
@@ -11,12 +11,12 @@ var names = ["Paul","Ringo","John","George"];
 // console.log(colors)
 
 var color_names = {};
-
-color_names[names[0]] = colors[0];
-color_names[names[1]] = colors[1];
-color_names[names[2]] = colors[2];
-color_names[names[3]] = colors[3];
+for (var i = 0;i < names.length; i++) {
+	color_names[names[i]] = colors[i];
+}
 console.log(color_names);
+
+
 
 
 // var colorAdder = function(names) {
