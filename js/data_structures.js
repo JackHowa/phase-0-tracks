@@ -1,29 +1,33 @@
-var colors = ["blue","red","orange","violet"];
+// var colors = ["blue","red","orange","violet"];
 
-var names = ["Paul","Ringo","John","George"];
+// var names = ["Paul","Ringo","John","George"];
 
-// names.push("Ed")
+// // names.push("Ed")
 
-// console.log(names)
+// // console.log(names)
 
-// colors.push("yellow")
+// // colors.push("yellow")
 
-// console.log(colors)
+// // console.log(colors)
 
-var color_names = {};
-for (var i = 0;i < names.length; i++) {
-	color_names[names[i]] = colors[i];
-}
-console.log(color_names);
-
-
-
-
-// var colorAdder = function(names) {
-// 	for (var i = 0; i < names.length; i++) {
-// 		names.push[colors[i]];
-// 		console.log(names)
-// 	}
+// var color_names = {};
+// for (var i = 0;i < names.length; i++) {
+// 	color_names[names[i]] = colors[i];
 // }
+// console.log(color_names);
 
-// console.log(colorAdder(names))
+function Car(type, year, working) {
+	this.type = type;
+	this.year = year;
+	this.working = working;
+
+	console.log("CAR INITIALIZATION COMPLETE");
+
+	this.honk = function() { console.log("The "+ type + " honk honks!"); };
+
+
+}
+
+var newCar = new Car("jeep",1994,true)
+
+newCar.honk()
