@@ -59,25 +59,23 @@
 
 // Input a whole number into function 
 // FOR whole number times 
-//		Make a random collection of characters 
-//		Add that collection to a word holder 
+//		Set a new word variable
+//		For a random length up to 10 
+//			Add random letters to that new word 
+//		Add that new word to collection of new words separated by comma
 // Start the longest word function using those letters
 
 function phraseMaker(int) {
-	var words_object = {}
+	var words = []
 	var lowercase = "abcdefghijklmnopqrstuvwxyz"
-	for (var i = 0;i < int; i++) {
+	for (var a = 0;a < int; a++) {
 		var new_word = ""
-		for (var i = 0; i < Math.floor((Math.random() * 10) + 1); i++) {
-			new_word += "a"
-
+		for (var i = 0; i < (Math.floor((Math.random() * 10) + 1) + 1); i++) {
+			new_word += lowercase[Math.floor((Math.random() * lowercase.length))]
 		}
-		return new_word
-
-	
+		words.push(new_word)
 	}
-	
-
+	return words
 }
 
 console.log(phraseMaker(4))
