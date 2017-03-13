@@ -36,21 +36,30 @@
 //			then set state of matching equal to true 
 // Show the state of even one of the attributes matching 
 
-function pairMatcher(object1,object2) {
-	for(var key in object1) {
-		if (object1[key] === object2[key]) {
-			return true;
-		}
-	}
-	return false;
+// function pairMatcher(object1,object2) {
+// matching = false;
+// 	for(var key in object1) {
+// 		if (object1[key] === object2[key]) {
+// 			matching = true;
+// 		}
+// 	}
+// 	return matching;
+// }
+
+// object1 = {name: "Steven", age: 54};
+// object2 = {name: "Tamir", age: 54};
+// object3 = {name: "Jack", age:23};
+
+// console.log(pairMatcher(object1,object2))
+
+// console.log(pairMatcher(object2,object3))
+
+
+// Release 2 
+
+function phraseMaker(int) {
+	return int
+
 }
 
-object1 = {name: "Steven", age: 54};
-object2 = {name: "Tamir", age: 54};
-object3 = {name: "Jack", age:23};
-
-console.log(pairMatcher(object1,object2))
-
-console.log(pairMatcher(object2,object3))
-
-
+console.log(phraseMaker(2))
