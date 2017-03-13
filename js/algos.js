@@ -90,10 +90,11 @@ function phraseMaker(int) {
 
 
 for (var i = 0; i < 10; i++) {
-	console.log(phraseMaker(3))
-
-
-
-
+	var randomPhrase = phraseMaker(3);
+	console.log("Here's the random phrase:");
+	console.log(randomPhrase);
+	console.log("And the longest word is:")
+	console.log(longestPhrase(randomPhrase));
+	console.log("")
 }
 
