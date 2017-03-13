@@ -8,16 +8,16 @@
 //			Make that word the the new longest phrase 
 // Show the longest phrase
 
-// function longestPhrase(phrases) {
-// 	var longestLength = 0;
-// 	var longestPhrase = "";
-// 	for (var i = 0;i < phrases.length; i++) {
-// 		if (phrases[i].length > longestLength)
-// 			longestPhrase = phrases[i]
-// 			longestLength = longestPhrase.length 
-// 	}
-// 	return longestPhrase
-// }
+function longestPhrase(phrases) {
+	var longestLength = 0;
+	var longestPhrase = "";
+	for (var i = 0;i < phrases.length; i++) {
+		if (phrases[i].length > longestLength)
+			longestPhrase = phrases[i]
+			longestLength = longestPhrase.length 
+	}
+	return longestPhrase
+}
 
 // // driver code 
 // phrases = ["long phrase","longest phrase","longer phrase"];
@@ -78,5 +78,22 @@ function phraseMaker(int) {
 	return words
 }
 
-console.log(phraseMaker(4))
+// console.log(phraseMaker(3))
+
+// release 3 
+
+// FOR 10 times 
+// 		Insert whole number into phrasemaker
+//			Show new phrase made 
+// 		Insert that new phrase made into longest word measurer
+// 			SHOW longest word 
+
+
+for (var i = 0; i < 10; i++) {
+	console.log(phraseMaker(3))
+
+
+
+
+}
 
