@@ -56,6 +56,22 @@ Sunday|true|Weekend
 
 DELETE FROM days WHERE name="Monday";
 
+release2
+
+
+SELECT * FROM days INNER JOIN day_types ON days.day_type_id = day_types.id;
+
+2|Thursday|true|1|1|Weekday
+3|Friday|true|1|1|Weekday
+4|Saturday|true|2|2|Weekend
+5|Sunday|true|2|2|Weekend
+
+
+SELECT * FROM days FULL OUTER JOIN day_types ON days.day_type_id = day_types.id;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+via https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
 
 
 
