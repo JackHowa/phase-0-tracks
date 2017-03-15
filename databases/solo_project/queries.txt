@@ -1,0 +1,79 @@
+queries.txt
+
+sqlite3 solo_project;
+
+CREATE TABLE day_types (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE days (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255),
+  good BOOLEAN,
+  day_type_id INT, 
+  FOREIGN KEY (day_type_id) REFERENCES day_types(id)
+);
+
+.tables
+
+INSERT INTO day_types (name) VALUES ("Weekday");
+INSERT INTO day_types (name) VALUES ("Weekend");
+
+INSERT INTO days (name,good,day_type_id) VALUES ("Monday","false",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Thursday","true",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Friday","true",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Saturday","true",2);
+INSERT INTO days (name,good,day_type_id) VALUES ("Sunday","false",2);
+
+
+1
+2
+3
+4
+5
+
+
+SELECT * FROM days; 
+
+UPDATE days SET good="true" WHERE name="Sunday";
+
+SELECT * FROM days JOIN day_types ON days.day_type_id = day_types.id;
+
+1|Monday|false|1|1|Weekday
+2|Thursday|true|1|1|Weekday
+3|Friday|true|1|1|Weekday
+4|Saturday|true|2|2|Weekend
+5|Sunday|true|2|2|Weekend
+
+SELECT days.name, days.good, day_types.name FROM days JOIN day_types ON days.day_type_id = day_types.id;
+
+Monday|false|Weekday
+Thursday|true|Weekday
+Friday|true|Weekday
+Saturday|true|Weekend
+Sunday|true|Weekend
+
+DELETE FROM days WHERE name="Monday";
+
+release2
+
+
+SELECT * FROM days INNER JOIN day_types ON days.day_type_id = day_types.id;
+
+2|Thursday|true|1|1|Weekday
+3|Friday|true|1|1|Weekday
+4|Saturday|true|2|2|Weekend
+5|Sunday|true|2|2|Weekend
+
+
+SELECT * FROM days FULL OUTER JOIN day_types ON days.day_type_id = day_types.id;
+
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+via https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
+
+
+
+
+
