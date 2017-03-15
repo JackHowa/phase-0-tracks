@@ -26,4 +26,38 @@ INSERT INTO days (name,good,day_type_id) VALUES ("Friday","true",1);
 INSERT INTO days (name,good,day_type_id) VALUES ("Saturday","true",2);
 INSERT INTO days (name,good,day_type_id) VALUES ("Sunday","false",2);
 
+
+1
+2
+3
+4
+5
+
+
+SELECT * FROM days; 
+
+UPDATE days SET good="true" WHERE name="Sunday";
+
+SELECT * FROM days JOIN day_types ON days.day_type_id = day_types.id;
+
+1|Monday|false|1|1|Weekday
+2|Thursday|true|1|1|Weekday
+3|Friday|true|1|1|Weekday
+4|Saturday|true|2|2|Weekend
+5|Sunday|true|2|2|Weekend
+
 SELECT days.name, days.good, day_types.name FROM days JOIN day_types ON days.day_type_id = day_types.id;
+
+Monday|false|Weekday
+Thursday|true|Weekday
+Friday|true|Weekday
+Saturday|true|Weekend
+Sunday|true|Weekend
+
+DELETE FROM days WHERE name="Monday";
+
+
+
+
+
+
