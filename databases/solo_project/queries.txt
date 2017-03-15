@@ -1,0 +1,29 @@
+queries.txt
+
+sqlite3 solo_project;
+
+CREATE TABLE day_types (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE days (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255),
+  good BOOLEAN,
+  day_type_id INT, 
+  FOREIGN KEY (day_type_id) REFERENCES day_types(id)
+);
+
+.tables
+
+INSERT INTO day_types (name) VALUES ("Weekday");
+INSERT INTO day_types (name) VALUES ("Weekend");
+
+INSERT INTO days (name,good,day_type_id) VALUES ("Monday","false",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Thursday","true",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Friday","true",1);
+INSERT INTO days (name,good,day_type_id) VALUES ("Saturday","true",2);
+INSERT INTO days (name,good,day_type_id) VALUES ("Sunday","false",2);
+
+SELECT days.name, days.good, day_types.name FROM days JOIN day_types ON days.day_type_id = day_types.id;
