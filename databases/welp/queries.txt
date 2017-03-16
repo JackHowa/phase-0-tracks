@@ -1,0 +1,81 @@
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+Bradford|Pitt|The Beagle Nightclub|5|Awesome place!
+Angela|Jolie|The Beagle Nightclub|1|Terrible place!
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|Good place
+
+only the beagle nightclub ... 
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.name="The Beagle Nightclub";
+
+
+
+
+
+sqlite3 welp.db
+
+select * FROM reviews;
+
+.schema  
+
+CREATE TABLE businesses (
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+);
+CREATE TABLE users (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+);
+CREATE TABLE reviews (
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY (business_id) REFERENCES businesses(id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+view the user's names, the business name, the star rating, and the comment.
+
+users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment
+
+SELECT * FROM reviews, users, businesses WHERE reviews.user_id = users.id WHERE reviews.business_id = businesses.id;
+
+Error: near "WHERE": syntax error
+
+SELECT * FROM reviews, users, businesses WHERE reviews.user_id = users.id AND WHERE reviews.business_id = businesses.id;
+
+Error: near "WHERE": syntax error
+
+SELECT * FROM reviews, users, businesses WHERE reviews.user_id = users.id;
+
+SELECT users.first_name, users.last_name FROM reviews JOIN users WHERE reviews.user_id = users.id; 
+
+Bradford|Pitt
+Angela|Jolie
+Mandy|Kaling
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users WHERE reviews.user_id = users.id JOIN businesses WHERE reviews.business_id = businesses.id;
+
+error near join 
+
+SELECT * FROM reviews JOIN users WHERE reviews.user_id = users.id, JOIN businesses WHERE reviews.business_id = businesses.id;
+
+Error: near ",": syntax error
+
+Error: near "JOIN": syntax error
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews,users,businesses JOIN users WHERE reviews.user_id = users.id JOIN businesses WHERE reviews.business_id = businesses.id;
+
+SELECT players.name, teams.name  FROM players JOIN teams ON players.team_id = teams.id;
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+Bradford|Pitt|The Beagle Nightclub|5|Awesome place!
+Angela|Jolie|The Beagle Nightclub|1|Terrible place!
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|Good place
+
+
+
