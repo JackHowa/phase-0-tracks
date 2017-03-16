@@ -10,8 +10,6 @@ SELECT users.first_name, users.last_name, businesses.name, reviews.stars, review
 
 
 
-
-
 sqlite3 welp.db
 
 select * FROM reviews;
