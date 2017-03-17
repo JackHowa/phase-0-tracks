@@ -1,5 +1,16 @@
 sqlite3 pod-tracker.db
 
+
+.mode csv
+.import opml.csv pods
+
+SELECT COUNT(title) FROM pods;
+
+
+
+
+
+
 create table pods (
 id INTEGER PRIMARY KEY,
 type VARCHAR(255),
@@ -28,6 +39,11 @@ title VARCHAR(255),
 xmlUrl nvarchar(2083),
 htmlUrl nvarchar(2083)
 );
+
+don't need to create table 
+..
+
+
 
 
 
