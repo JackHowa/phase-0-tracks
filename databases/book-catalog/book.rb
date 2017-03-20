@@ -40,12 +40,13 @@ end
 
 # explore ORM by retrieving data
 books = db.execute("SELECT * FROM books")
-books.each do |books|
- puts "#{books['name']}, ISBN number #{books['isbn']}, is now available."
-end
+
+# books.each do |books|
+#  puts "#{books['name']}, ISBN number #{books['isbn']}, is now available."
+# end
 
 # requests portion 
-length.to_i.times
+length.to_i.times do
 
 	puts "Now how you can make #{length} requests for books."
 
@@ -54,12 +55,19 @@ length.to_i.times
 	books.each do |books|
 		puts "Name: #{books['name']}"
 		puts "ISBN: #{books['isbn']}"
+		puts ""
 	end 
 
-		puts "What book name would you like to request?"
-		request_name = gets.chomp 
-		puts request_name
+	puts "What book name would you like to request?"
+	request_name = gets.chomp
 
+	books.each do |books|
+		if request_name == books['name'] 
+			puts "Great we have #{books['name']}!"
+			db.execute("DELETE FROM books WHERE name='#{books['name']}';")
+		else 
+		end 
+	end 
 end 
 
 
