@@ -41,6 +41,27 @@ end
 # explore ORM by retrieving data
 books = db.execute("SELECT * FROM books")
 books.each do |books|
- puts "#{books['name']} is serial number #{books['isbn']}"
+ puts "#{books['name']}, ISBN number #{books['isbn']}, is now available."
 end
+
+# requests portion 
+length.to_i.times
+
+	puts "Now how you can make #{length} requests for books."
+
+	puts "Here's all of the books that are available:"
+
+	books.each do |books|
+		puts "Name: #{books['name']}"
+		puts "ISBN: #{books['isbn']}"
+	end 
+
+		puts "What book name would you like to request?"
+		request_name = gets.chomp 
+		puts request_name
+
+end 
+
+
+
 
