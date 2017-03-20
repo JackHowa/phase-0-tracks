@@ -1,12 +1,11 @@
-# require gems
 require 'sqlite3'
-require 'faker'
+# require 'faker'
 
-# create SQLite3 database
+
 db = SQLite3::Database.new("books.db")
 db.results_as_hash = true
 
-# learn about fancy string delimiters
+
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS books(
     id INTEGER PRIMARY KEY,
@@ -15,7 +14,6 @@ create_table_cmd = <<-SQL
   )
 SQL
 
-# create a books table (if it's not there already)
 db.execute(create_table_cmd)
 
 # add a test book
@@ -28,7 +26,7 @@ end
 
 puts "How many books would you like to input:"
 
-length = gets.chomp
+length = gets.chomp.to_i
 
 length.to_i.times do
 	puts "Enter book's name:"
@@ -38,7 +36,6 @@ length.to_i.times do
   create_books(db, name, isbn)
 end
 
-# explore ORM by retrieving data
 books = db.execute("SELECT * FROM books")
 
 # books.each do |books|
@@ -46,18 +43,19 @@ books = db.execute("SELECT * FROM books")
 # end
 
 # requests portion 
-length.to_i.times do
 
-	puts "Now how you can make #{length} requests for books."
+puts "Here's all of the books that are available:"
 
-	puts "Here's all of the books that are available:"
+books.each do |books|
+	puts "Name: #{books['name']}"
+	puts "ISBN: #{books['isbn']}"
+	puts ""
+end 
 
-	books.each do |books|
-		puts "Name: #{books['name']}"
-		puts "ISBN: #{books['isbn']}"
-		puts ""
-	end 
+length.times do
 
+	puts "You can make #{length} requests for books."
+	puts ""
 	puts "What book name would you like to request?"
 	request_name = gets.chomp
 
@@ -67,7 +65,20 @@ length.to_i.times do
 			db.execute("DELETE FROM books WHERE name='#{books['name']}';")
 		else 
 		end 
-	end 
+	end
+
+	length = length - 1 
+end 
+
+# need to update list
+books = db.execute("SELECT * FROM books")
+
+puts "Here's all of the books that are available now:"
+
+books.each do |books|
+	puts "Name: #{books['name']}"
+	puts "ISBN: #{books['isbn']}"
+	puts ""
 end 
 
 
