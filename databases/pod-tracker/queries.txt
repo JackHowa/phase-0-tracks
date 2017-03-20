@@ -1,0 +1,110 @@
+sqlite3 pod-tracker.db
+
+
+.mode csv
+.import opml.csv pods
+
+SELECT COUNT(title) FROM pods;
+
+
+
+
+
+
+create table pods (
+id INTEGER PRIMARY KEY,
+type VARCHAR(255),
+text VARCHAR(255),
+title VARCHAR(255),
+xmlUrl nvarchar(2083),
+htmlUrl nvarchar(2083)
+);
+
+.table
+
+pods
+
+.schema
+
+.mode csv
+.import opml.csv pods
+
+opml.csv:1: expected 6 columns but found 5 - filling the rest with NULL
+opml.csv:1: INSERT failed: datatype mismatch
+
+create table pods (
+type VARCHAR(255),
+text VARCHAR(255),
+title VARCHAR(255),
+xmlUrl nvarchar(2083),
+htmlUrl nvarchar(2083)
+);
+
+don't need to create table 
+..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BULK INSERT SchoolsTemp
+    FROM 'C:\CSVData\Schools.csv'
+    WITH
+    (
+    FIRSTROW = 2,
+    FIELDTERMINATOR = ',',  --CSV field delimiter
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
+    ERRORFILE = 'C:\CSVDATA\SchoolsErrorRows.csv',
+    TABLOCK
+    )
+
+BULK INSERT Pods
+FROM '/Users/jackhowa/dotfiles/phase-0-tracks/databases/pod-tracker/opml.csv'
+WITH
+(
+FIRSTROW = 2,
+FIELDTERMINATOR = ',',  --CSV field delimiter
+ROWTERMINATOR = '\n',   --Use to shift the control to next row
+ERRORFILE = '/Users/jackhowa/dotfiles/phase-0-tracks/databases/pod-tracker/opml.csv',
+TABLOCK
+)
+
+create table 
+
+.import opml.csv pods
+
+ALTER TABLE pods DROP COLUMN type;
+
+
+
+sqlite> create table foo(a, b);
+sqlite> .mode csv
+sqlite> .import test.csv foo
+
+create table pods (a, b, c, d, e);
+.mode csv
+.import opml.csv pods
+
+
+create table pods (title, xmlUrl, htmlUrl);
+.separator "\t"
+.import full-pods.tsv pods
+
+.mode tabs 
+.import full-pods.tsv pods
