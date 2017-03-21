@@ -1,24 +1,13 @@
-console.log("The script is running!");
-
-function toggle_visibility(event) {
-       var cham = document.getElementById("lizard-photo");
-   
-       if(cham.style.display == 'block')
-          cham.style.display = 'none';
-       else
-          cham.style.display = 'block';
+function hide(event){
+  var monkey = document.getElementById('monkey');
+  monkey.hidden = true;
 }
+var hideButton = document.getElementById("hideButton");
+hideButton.addEventListener("click", hide);
 
-var cham = document.getElementById("lizard-photo");
-
-var hide = document.getElementById("hide");
-photo.addEventListener("click",toggle_visibility)
-
-function addPinkBorder(event) {
-  console.log("click happened! here's the click event:");
-  console.log(event);
-  event.target.style.border = "2px solid pink";
+function reveal(event){
+  var monkey = document.getElementById('monkey');
+  monkey.hidden = false;
 }
-
-var photo = document.getElementById("lizard-photo");
-photo.addEventListener("click", addPinkBorder);
+var revealButton = document.getElementById("revealButton");
+revealButton.addEventListener("click", reveal);
