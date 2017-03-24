@@ -48,3 +48,7 @@ end
 get '/contact' do 
   "1600 Pennslyvania Avenue"
 end 
+
+get '/great_job/:name' do 
+  "Good job, #{params[:name]}!"
+end
