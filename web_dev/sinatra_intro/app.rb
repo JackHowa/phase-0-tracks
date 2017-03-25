@@ -1,6 +1,7 @@
 # require gems
 require 'sinatra'
 require 'sqlite3'
+require 'shotgun'
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
@@ -46,9 +47,14 @@ get '/students/:id' do
 end
 
 get '/contact' do 
-  "1600 Pennslyvania Avenue"
+  "1600 Pennslyvania Avenue!"
 end 
 
 get '/great_job/:name' do 
   "Good job, #{params[:name]}!"
 end
+
+get '/add/:num_1/:num_2' do
+  "#{params[:num_1]} + 1 #{params[:num_2]} = "
+  total = num_1 + num_2
+end 
